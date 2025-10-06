@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script
+// CHUNITHM Rating Image Generator - Main Script (v2 - New Tab Save)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -147,37 +147,14 @@
         script.onload = async () => {
             try {
                 const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true });
-                const finalImage = document.createElement("img");
-                finalImage.src = canvas.toDataURL("image/png");
-                finalImage.style.position = "fixed";
-                finalImage.style.top = "0";
-                finalImage.style.left = "0";
-                finalImage.style.width = "100%";
-                finalImage.style.height = "100%";
-                finalImage.style.objectFit = "contain";
-                finalImage.style.backgroundColor = "black";
-                finalImage.style.zIndex = "99999";
-                document.body.appendChild(finalImage);
+                
+                // ▼▼▼ ここからが変更点 ▼▼▼
+                // 生成した画像を新しいタブで開く
+                const dataUrl = canvas.toDataURL("image/png");
+                window.open(dataUrl, '_blank');
+                statusDiv.innerText = "画像を開きました！";
+                // ▲▲▲ ここまでが変更点 ▲▲▲
 
-                const closeButton = document.createElement("button");
-                closeButton.innerText = "閉じる";
-                closeButton.style.position = "fixed";
-                closeButton.style.top = "20px";
-                closeButton.style.right = "20px";
-                closeButton.style.padding = "10px 20px";
-                closeButton.style.backgroundColor = "#dc3545";
-                closeButton.style.color = "white";
-                closeButton.style.border = "none";
-                closeButton.style.borderRadius = "5px";
-                closeButton.style.cursor = "pointer";
-                closeButton.style.zIndex = "100000";
-                closeButton.onclick = () => {
-                    finalImage.remove();
-                    closeButton.remove();
-                    document.body.style.overflow = "auto";
-                };
-                document.body.appendChild(closeButton);
-                statusDiv.innerText = "画像表示完了！";
             } catch (e) {
                 alert("画像生成中にエラーが発生しました: " + e.message);
                 console.error(e);
@@ -191,6 +168,7 @@
         alert("エラーが発生しました: " + e.message);
         console.error(e);
     } finally {
-        statusDiv.remove();
+        // すぐに消すと味気ないので、少し遅れて消す
+        setTimeout(() => statusDiv.remove(), 2000);
     }
 })();
