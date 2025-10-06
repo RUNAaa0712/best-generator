@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHUNITHM レーティング画像生成</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; background-color: #f0f2f5; color: #333; margin: 0; padding: 20px; }
+        .container { background-color: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); max-width: 600px; margin: 0 auto; }
+        h1, h2 { text-align: center; }
+        p { font-size: 16px; line-height: 1.6; }
+        .desktop-only { display: none; }
+        @media (min-width: 768px) { .desktop-only { display: block; } .mobile-only { display: none; } }
+        .bookmarklet-link { display: inline-block; padding: 15px 30px; background-color: #007bff; color: #fff; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 8px; cursor: move; transition: background-color 0.2s; text-align: center; }
+        .bookmarklet-link:hover { background-color: #0056b3; }
+        .instructions { margin-top: 30px; border-top: 1px solid #ddd; padding-top: 20px; }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        .code-block { margin-top: 20px; }
+        textarea { width: 100%; height: 80px; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-family: monospace; resize: none; box-sizing: border-box; }
+        .copy-button { display: block; width: 100%; padding: 12px; margin-top: 10px; background-color: #28a745; color: white; border: none; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .copy-button:hover { background-color: #218838; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CHUNITHM レーティング画像生成</h1>
+        
+        <div class="desktop-only">
+            <p>下の青いリンクを、お使いのブラウザの<br>ブックマークバーにドラッグ＆ドロップしてください。</p>
+            <a class="bookmarklet-link" href=''>ブックマークレットを登録</a>
+        </div>
+
+        <div class="mobile-only">
+            <p>以下の手順でブックマークレットを登録してください。</p>
+            <div class="code-block">
+                <p><strong>1. 下のボタンを押してコードをコピー</strong></p>
+                <textarea id="bookmarklet-code" readonly></textarea>
+                <button class="copy-button" onclick="copyCode()">コードをコピー</button>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2 class="mobile-only">2. お使いのスマホでの登録方法</h2>
+            <h3>iPhone (Safari)での登録方法</h3>
+            <ol>
+                <li>このページを一度ブックマークに追加します。</li>
+                <li>ブックマーク一覧を開き、今追加したものを「編集」します。</li>
+                <li>名前を「CHUNITHM画像生成」などに変更します。</li>
+                <li>アドレス(URL)欄を一度すべて消し、先ほどコピーしたコードを「ペースト」します。</li>
+                <li>保存すれば完了です。</li>
+            </ol>
+            <h3>Android (Chrome)での登録方法</h3>
+            <ol>
+                <li>このページを一度ブックマークに追加します。</li>
+                <li>ブックマーク一覧を開き、今追加したものの横にある︙(メニュー)から「編集」をタップします。</li>
+                <li>名前を「CHUNITHM画像生成」などに変更します。</li>
+                <li>URL欄を一度すべて消し、先ほどコピーしたコードを「貼り付け」します。</li>
+                <li>保存すれば完了です。</li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        // ▼▼▼ このURLを、ご自身がGitHub Pagesにアップロードした「main.js」のURLに書き換えてください ▼▼▼
+        const mainScriptUrl = 'https://RUNAaa0712.github.io/best-generator/main.js';
+        
+        const bookmarkletCode = `javascript:(() => { const script = document.createElement('script'); script.src = '${mainScriptUrl}'; document.body.appendChild(script); })();`;
+        
+        // ページ内の要素にブックマークレットコードを設定
+        document.querySelector('.bookmarklet-link').href = bookmarkletCode;
+        document.getElementById('bookmarklet-code').value = bookmarkletCode;
+
+        // コピーボタンの機能を設定
+        function copyCode() {
+            const codeTextarea = document.getElementById('bookmarklet-code');
+            codeTextarea.select();
+            navigator.clipboard.writeText(codeTextarea.value).then(() => {
+                alert('コードをコピーしました！');
+            }).catch(err => {
+                console.error('コピーに失敗しました', err);
+                alert('コピーに失敗しました。');
+            });
+        }
+    </script>
+</body>
+</html>
