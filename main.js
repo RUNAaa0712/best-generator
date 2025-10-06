@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v7 - Data URL Fallback)
+// CHUNITHM Rating Image Generator - Main Script (v8 - Final Download Modal)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -148,14 +148,71 @@
             try {
                 const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
                 
-                // ▼▼▼ ここからが変更点 ▼▼▼
-                // blob形式ではなく、互換性の高いdata:URL形式で画像データを取得
-                const dataUrl = canvas.toDataURL("image/png");
-                
-                // 新しいタブで画像を開く
-                window.open(dataUrl, '_blank');
-                statusDiv.innerText = "新しいタブで画像を開きました！";
-                // ▲▲▲ ここまでが変更点 ▲▲▲
+                // ▼▼▼ ここからが新しいモーダル表示の処理 ▼▼▼
+                canvas.toBlob(blob => {
+                    const blobUrl = URL.createObjectURL(blob);
+
+                    const modalOverlay = document.createElement("div");
+                    modalOverlay.style.position = "fixed";
+                    modalOverlay.style.top = "0";
+                    modalOverlay.style.left = "0";
+                    modalOverlay.style.width = "100%";
+                    modalOverlay.style.height = "100%";
+                    modalOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
+                    modalOverlay.style.zIndex = "100000";
+                    modalOverlay.style.display = "flex";
+                    modalOverlay.style.flexDirection = "column"; // 縦並びに変更
+                    modalOverlay.style.justifyContent = "center";
+                    modalOverlay.style.alignItems = "center";
+                    document.body.style.overflow = "hidden";
+
+                    // プレビュー画像
+                    const previewImage = document.createElement("img");
+                    previewImage.src = blobUrl;
+                    previewImage.style.maxWidth = "80%";
+                    previewImage.style.maxHeight = "60%"; // プレビューサイズを調整
+                    previewImage.style.objectFit = "contain";
+                    previewImage.style.border = "2px solid #555";
+                    previewImage.style.borderRadius = "4px";
+                    previewImage.style.marginBottom = "20px"; // ボタンとの間隔
+
+                    // ダウンロードボタン
+                    const downloadButton = document.createElement("a");
+                    downloadButton.innerText = "ダウンロード";
+                    downloadButton.href = blobUrl;
+                    downloadButton.download = `chunithm_rating_${now.toISOString().slice(0, 10)}.png`;
+                    downloadButton.style.padding = "15px 30px";
+                    downloadButton.style.backgroundColor = "#9c27b0";
+                    downloadButton.style.color = "white";
+                    downloadButton.style.textDecoration = "none";
+                    downloadButton.style.borderRadius = "8px";
+                    downloadButton.style.fontWeight = "bold";
+                    downloadButton.style.fontSize = "18px";
+                    
+                    // 閉じるボタン
+                    const closeButton = document.createElement("button");
+                    closeButton.innerText = "閉じる";
+                    closeButton.style.marginTop = "15px";
+                    closeButton.style.padding = "10px 20px";
+                    closeButton.style.backgroundColor = "#555";
+                    closeButton.style.color = "white";
+                    closeButton.style.border = "none";
+                    closeButton.style.borderRadius = "8px";
+                    closeButton.style.cursor = "pointer";
+                    closeButton.onclick = () => {
+                        modalOverlay.remove();
+                        URL.revokeObjectURL(blobUrl);
+                        document.body.style.overflow = "auto";
+                    };
+
+                    modalOverlay.appendChild(previewImage);
+                    modalOverlay.appendChild(downloadButton);
+                    modalOverlay.appendChild(closeButton);
+                    document.body.appendChild(modalOverlay);
+
+                    statusDiv.innerText = "モーダルを表示しました！";
+                }, 'image/png');
+                // ▲▲▲ ここまでが新しいモーダル表示の処理 ▲▲▲
 
             } catch (e) {
                 alert("画像生成中にエラーが発生しました: " + e.message);
@@ -170,6 +227,6 @@
         alert("エラーが発生しました: " + e.message);
         console.error(e);
     } finally {
-        setTimeout(() => statusDiv.remove(), 3000);
+        setTimeout(() => statusDiv.remove(), 2000);
     }
 })();
