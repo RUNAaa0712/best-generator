@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v10 - Final / Stable New Tab)
+// CHUNITHM Rating Image Generator - Main Script (v11 - Mobile Save Fix)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -8,9 +8,10 @@
     statusDiv.style.top = "10px";
     statusDiv.style.left = "10px";
     statusDiv.style.padding = "10px";
-    statusDiv.style.backgroundColor = "black";
+    statusDiv.style.backgroundColor = "rgba(0,0,0,0.8)";
     statusDiv.style.color = "white";
     statusDiv.style.zIndex = "9999";
+    statusDiv.style.borderRadius = "5px";
     statusDiv.innerText = "データを取得しています...";
     document.body.appendChild(statusDiv);
 
@@ -53,7 +54,7 @@
         const container = document.createElement("div");
         container.id = "chunithm-chart-container";
         container.style.position = "absolute";
-        container.style.left = "-9999px";
+        container.style.left = "-9999px"; // 画面外に配置
         container.style.top = "0";
         container.style.width = "1240px";
         container.style.backgroundColor = "#1c1c1e";
@@ -66,7 +67,7 @@
 
         const now = new Date();
         const timestamp = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
-        
+
         const headerDiv = document.createElement("div");
         headerDiv.style.width = "100%";
         headerDiv.style.display = "flex";
@@ -122,14 +123,16 @@
             const titleP = document.createElement("p");
             titleP.style.fontWeight = "bold";
             titleP.style.fontSize = "14px";
-            titleP.style.marginBottom = "2px";
-            titleP.style.height = "3em";
+            titleP.style.margin = "0 0 2px 0";
+            titleP.style.height = "3em"; // 2行分程度の高さを確保
+            titleP.style.lineHeight = "1.5em";
             titleP.style.overflow = "hidden";
             titleP.style.textOverflow = "ellipsis";
             titleP.style.whiteSpace = "normal";
             titleP.innerText = song.title;
 
             const scoreP = document.createElement("p");
+            scoreP.style.margin = "0";
             scoreP.style.fontSize = "12px";
             scoreP.style.color = "#aaa";
             scoreP.innerText = `スコア: ${song.score}`;
@@ -146,23 +149,53 @@
         script.src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js";
         script.onload = async () => {
             try {
-                const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
-                
-                // ▼▼▼ 変更点：「新しいタブで開く」方式のバグを修正 ▼▼▼
+                const canvas = await html2canvas(container, {
+                    backgroundColor: "#1c1c1e",
+                    useCORS: true,
+                    allowTaint: true,
+                    width: 1240,
+                    windowWidth: 1240
+                });
+
+                // ▼▼▼ 変更点：新しいタブにHTMLを書き込んで画像を表示する方式に変更 ▼▼▼
                 canvas.toBlob(blob => {
                     const blobUrl = URL.createObjectURL(blob);
-                    const newTab = window.open(blobUrl, '_blank');
-                    
-                    // ポップアップがブロックされた場合の警告
+                    const newTab = window.open();
+
                     if (!newTab) {
                         alert('ポップアップがブロックされました。このサイトのポップアップを許可してください。');
+                        statusDiv.innerText = "エラー: ポップアップがブロックされました";
+                        return;
                     }
+
+                    const html = `
+                        <!DOCTYPE html>
+                        <html>
+                        <head>
+                            <title>CHUNITHM Rating Image | ${playerName}</title>
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                            <style>
+                                body { margin: 0; background-color: #111; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
+                                img { max-width: 100%; height: auto; }
+                                p { color: white; font-family: sans-serif; text-align: center; padding: 1em; }
+                            </style>
+                        </head>
+                        <body>
+                            <p>画像を長押しして保存、または右クリックして「名前を付けて画像を保存」を選択してください。</p>
+                            <img src="${blobUrl}" alt="CHUNITHM Rating Image for ${playerName}">
+                        </body>
+                        </html>
+                    `;
+                    newTab.document.open();
+                    newTab.document.write(html);
+                    newTab.document.close();
                     
-                    statusDiv.innerText = "新しいタブで画像を開きました！";
-                    
-                    // メモリ解放処理(revokeObjectURL)を削除。
-                    // これが早すぎて画像の読み込みに失敗する原因でした。
-                    // タブを閉じればブラウザが自動でメモリを解放します。
+                    statusDiv.innerText = "画像を開きました！長押しで保存できます。";
+                    // 新しいタブが閉じられたときにメモリを解放する
+                    // (必須ではないが、より丁寧な実装)
+                    newTab.addEventListener('beforeunload', () => {
+                        URL.revokeObjectURL(blobUrl);
+                    });
 
                 }, 'image/png');
                 // ▲▲▲ 変更点ここまで ▲▲▲
@@ -180,6 +213,6 @@
         alert("エラーが発生しました: " + e.message);
         console.error(e);
     } finally {
-        setTimeout(() => statusDiv.remove(), 3000);
+        setTimeout(() => statusDiv.remove(), 5000); // 表示時間を少し延長
     }
 })();
