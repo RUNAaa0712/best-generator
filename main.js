@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v5 - Blob Image Modal)
+// CHUNITHM Rating Image Generator - Main Script (v6 - Final / New Tab Save)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -148,57 +148,17 @@
             try {
                 const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
                 
-                // ▼▼▼ ここからが新しいシンプルなモーダル表示の処理 ▼▼▼
+                // ▼▼▼ ここからが変更点 ▼▼▼
                 canvas.toBlob(blob => {
                     const blobUrl = URL.createObjectURL(blob);
-
-                    const modalOverlay = document.createElement("div");
-                    modalOverlay.style.position = "fixed";
-                    modalOverlay.style.top = "0";
-                    modalOverlay.style.left = "0";
-                    modalOverlay.style.width = "100%";
-                    modalOverlay.style.height = "100%";
-                    modalOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
-                    modalOverlay.style.zIndex = "100000";
-                    modalOverlay.style.display = "flex";
-                    modalOverlay.style.justifyContent = "center";
-                    modalOverlay.style.alignItems = "center";
-                    document.body.style.overflow = "hidden";
-
-                    const imageElement = document.createElement("img");
-                    imageElement.src = blobUrl;
-                    imageElement.style.maxWidth = "95%";
-                    imageElement.style.maxHeight = "95%";
-                    imageElement.style.objectFit = "contain";
-                    imageElement.style.boxShadow = "0 0 20px rgba(0, 0, 0, 0.7)";
-
-                    const closeButton = document.createElement("button");
-                    closeButton.innerText = "×";
-                    closeButton.style.position = "absolute";
-                    closeButton.style.top = "10px";
-                    closeButton.style.right = "10px";
-                    closeButton.style.width = "40px";
-                    closeButton.style.height = "40px";
-                    closeButton.style.fontSize = "24px";
-                    closeButton.style.backgroundColor = "rgba(0,0,0,0.5)";
-                    closeButton.style.color = "white";
-                    closeButton.style.border = "1px solid #fff";
-                    closeButton.style.borderRadius = "50%";
-                    closeButton.style.cursor = "pointer";
-                    closeButton.style.zIndex = "100002"; // 画像より手前に表示
-                    closeButton.onclick = () => {
-                        modalOverlay.remove();
-                        URL.revokeObjectURL(blobUrl); // メモリを解放
-                        document.body.style.overflow = "auto";
-                    };
-
-                    modalOverlay.appendChild(imageElement);
-                    modalOverlay.appendChild(closeButton);
-                    document.body.appendChild(modalOverlay);
-
-                    statusDiv.innerText = "画像を表示しました！";
+                    // 新しいタブで画像を開く
+                    window.open(blobUrl, '_blank');
+                    statusDiv.innerText = "新しいタブで画像を開きました！";
+                    // Blob URLはタブが閉じられると自動で解放されることが多いですが、
+                    // 念のためこのブックマークレットのコンテキストでは不要なので解放します。
+                    URL.revokeObjectURL(blobUrl);
                 }, 'image/png');
-                // ▲▲▲ ここまでが新しいモーダル表示の処理 ▲▲▲
+                // ▲▲▲ ここまでが変更点 ▲▲▲
 
             } catch (e) {
                 alert("画像生成中にエラーが発生しました: " + e.message);
@@ -213,6 +173,6 @@
         alert("エラーが発生しました: " + e.message);
         console.error(e);
     } finally {
-        setTimeout(() => statusDiv.remove(), 2000);
+        setTimeout(() => statusDiv.remove(), 3000);
     }
 })();
