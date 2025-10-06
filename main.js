@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v6 - Final / New Tab Save)
+// CHUNITHM Rating Image Generator - Main Script (v7 - Data URL Fallback)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -149,15 +149,12 @@
                 const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
                 
                 // ▼▼▼ ここからが変更点 ▼▼▼
-                canvas.toBlob(blob => {
-                    const blobUrl = URL.createObjectURL(blob);
-                    // 新しいタブで画像を開く
-                    window.open(blobUrl, '_blank');
-                    statusDiv.innerText = "新しいタブで画像を開きました！";
-                    // Blob URLはタブが閉じられると自動で解放されることが多いですが、
-                    // 念のためこのブックマークレットのコンテキストでは不要なので解放します。
-                    URL.revokeObjectURL(blobUrl);
-                }, 'image/png');
+                // blob形式ではなく、互換性の高いdata:URL形式で画像データを取得
+                const dataUrl = canvas.toDataURL("image/png");
+                
+                // 新しいタブで画像を開く
+                window.open(dataUrl, '_blank');
+                statusDiv.innerText = "新しいタブで画像を開きました！";
                 // ▲▲▲ ここまでが変更点 ▲▲▲
 
             } catch (e) {
