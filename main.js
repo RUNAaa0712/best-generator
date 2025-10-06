@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v11 - Final / Page Replace)
+// CHUNITHM Rating Image Generator - Main Script (v12 - Final / Data URL Page Replace)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -148,35 +148,26 @@
             try {
                 const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
                 
-                // ▼▼▼ ここからが新しいページ置換の処理 ▼▼▼
-                canvas.toBlob(blob => {
-                    const blobUrl = URL.createObjectURL(blob);
+                // ▼▼▼ ここからが変更点 ▼▼▼
+                const dataUrl = canvas.toDataURL("image/png");
 
-                    statusDiv.innerText = "画像を表示します...";
+                statusDiv.innerText = "画像を表示します...";
+                
+                setTimeout(() => {
+                    document.body.innerHTML = '';
+                    document.body.style.margin = '0';
+                    document.body.style.padding = '0';
+                    document.body.style.backgroundColor = 'black';
+                    
+                    const imageElement = document.createElement('img');
+                    imageElement.src = dataUrl;
+                    imageElement.style.width = '100vw';
+                    imageElement.style.height = '100vh';
+                    imageElement.style.objectFit = 'contain';
 
-                    // 少し待ってからページを置換
-                    setTimeout(() => {
-                        // 元のページの内容を全て消去
-                        document.body.innerHTML = '';
-                        document.body.style.margin = '0';
-                        document.body.style.padding = '0';
-                        document.body.style.backgroundColor = 'black';
-                        
-                        // 生成した画像だけを表示
-                        const imageElement = document.createElement('img');
-                        imageElement.src = blobUrl;
-                        imageElement.style.width = '100vw';
-                        imageElement.style.height = '100vh';
-                        imageElement.style.objectFit = 'contain';
-
-                        document.body.appendChild(imageElement);
-
-                        // この処理が終わった後、blobUrlは不要になるが、
-                        // ページを「戻る」で抜けるため、明示的な解放はしない
-                    }, 500);
-
-                }, 'image/png');
-                // ▲▲▲ ここまでが新しいページ置換の処理 ▲▲▲
+                    document.body.appendChild(imageElement);
+                }, 500);
+                // ▲▲▲ ここまでが変更点 ▲▲▲
 
             } catch (e) {
                 alert("画像生成中にエラーが発生しました: " + e.message);
