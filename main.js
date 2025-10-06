@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v2 - New Tab Save)
+// CHUNITHM Rating Image Generator - Main Script (v3 - Modal Display)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -146,14 +146,150 @@
         script.src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js";
         script.onload = async () => {
             try {
-                const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true });
+                const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
+                const imageDataUrl = canvas.toDataURL("image/png");
+
+                // ▼▼▼ ここからモーダル表示の処理 ▼▼▼
+                const modalOverlay = document.createElement("div");
+                modalOverlay.style.position = "fixed";
+                modalOverlay.style.top = "0";
+                modalOverlay.style.left = "0";
+                modalOverlay.style.width = "100%";
+                modalOverlay.style.height = "100%";
+                modalOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.8)";
+                modalOverlay.style.zIndex = "100000";
+                modalOverlay.style.display = "flex";
+                modalOverlay.style.justifyContent = "center";
+                modalOverlay.style.alignItems = "center";
+                modalOverlay.style.overflow = "auto"; // モーダル内のスクロールを可能にする
+                document.body.style.overflow = "hidden"; // 背景のスクロールを禁止
+
+                const modalContent = document.createElement("div");
+                modalContent.style.backgroundColor = "transparent";
+                modalContent.style.padding = "20px";
+                modalContent.style.borderRadius = "8px";
+                modalContent.style.maxWidth = "calc(100% - 40px)";
+                modalContent.style.maxHeight = "calc(100% - 40px)";
+                modalContent.style.boxSizing = "border-box";
+                modalContent.style.position = "relative";
+                modalContent.style.display = "flex";
+                modalContent.style.flexDirection = "column";
+                modalContent.style.alignItems = "center";
+
+                // 上部UI部分
+                const topUiDiv = document.createElement("div");
+                topUiDiv.style.display = "flex";
+                topUiDiv.style.justifyContent = "space-between";
+                topUiDiv.style.alignItems = "center";
+                topUiDiv.style.width = "100%";
+                topUiDiv.style.maxWidth = "1240px"; // 元画像の幅に合わせる
+                topUiDiv.style.marginBottom = "15px";
+                topUiDiv.style.color = "white";
+
+                // 左側のチェックボックスとテキスト
+                const leftControls = document.createElement("div");
+                leftControls.style.display = "flex";
+                leftControls.style.alignItems = "center";
+                const checkbox = document.createElement("input");
+                checkbox.type = "checkbox";
+                checkbox.id = "playerInfoToggle";
+                checkbox.checked = true; // デフォルトでチェック
+                checkbox.style.marginRight = "5px";
+                const checkboxLabel = document.createElement("label");
+                checkboxLabel.htmlFor = "playerInfoToggle";
+                checkboxLabel.innerText = "プレイヤー情報も載せる";
+                checkboxLabel.style.fontSize = "14px";
+                leftControls.appendChild(checkbox);
+                leftControls.appendChild(checkboxLabel);
+
+                // 右側のグリッド/リストボタン (ダミー)
+                const rightControls = document.createElement("div");
+                rightControls.style.display = "flex";
+                const gridButton = document.createElement("button");
+                gridButton.innerText = "▦"; // グリッドアイコン
+                gridButton.style.padding = "5px 10px";
+                gridButton.style.backgroundColor = "#555";
+                gridButton.style.color = "white";
+                gridButton.style.border = "none";
+                gridButton.style.borderRadius = "4px";
+                gridButton.style.cursor = "pointer";
+                gridButton.style.marginRight = "5px";
+                const listButton = document.createElement("button");
+                listButton.innerText = "☰"; // リストアイコン
+                listButton.style.padding = "5px 10px";
+                listButton.style.backgroundColor = "#333";
+                listButton.style.color = "white";
+                listButton.style.border = "none";
+                listButton.style.borderRadius = "4px";
+                listButton.style.cursor = "not-allowed"; // ダミーなので無効化
                 
-                // ▼▼▼ ここからが変更点 ▼▼▼
-                // 生成した画像を新しいタブで開く
-                const dataUrl = canvas.toDataURL("image/png");
-                window.open(dataUrl, '_blank');
-                statusDiv.innerText = "画像を開きました！";
-                // ▲▲▲ ここまでが変更点 ▲▲▲
+                rightControls.appendChild(gridButton);
+                rightControls.appendChild(listButton);
+
+                topUiDiv.appendChild(leftControls);
+                topUiDiv.appendChild(rightControls);
+                modalContent.appendChild(topUiDiv);
+
+
+                const imageElement = document.createElement("img");
+                imageElement.src = imageDataUrl;
+                imageElement.style.maxWidth = "100%"; // モーダルに合わせて縮小
+                imageElement.style.maxHeight = "calc(100% - 120px)"; // UIとボタンの分を引く
+                imageElement.style.height = "auto";
+                imageElement.style.objectFit = "contain";
+                imageElement.style.borderRadius = "4px";
+                imageElement.style.border = "1px solid #444";
+                imageElement.style.boxShadow = "0 0 15px rgba(0, 0, 0, 0.5)";
+                imageElement.style.marginBottom = "15px"; // ダウンロードボタンとの間隔
+
+                modalContent.appendChild(imageElement);
+
+                // ダウンロードボタン
+                const downloadButton = document.createElement("a");
+                downloadButton.innerText = "ダウンロード";
+                downloadButton.href = imageDataUrl;
+                downloadButton.download = `chunithm_rating_${playerName}_${now.toISOString().slice(0, 10)}.png`; // ファイル名にプレイヤー名と日付
+                downloadButton.style.display = "block";
+                downloadButton.style.width = "calc(100% - 40px)"; // モーダル幅に合わせる
+                downloadButton.style.maxWidth = "300px";
+                downloadButton.style.padding = "12px 20px";
+                downloadButton.style.backgroundColor = "#9c27b0"; // 紫色のダウンロードボタン
+                downloadButton.style.color = "white";
+                downloadButton.style.textDecoration = "none";
+                downloadButton.style.textAlign = "center";
+                downloadButton.style.borderRadius = "8px";
+                downloadButton.style.fontWeight = "bold";
+                downloadButton.style.marginTop = "10px";
+                downloadButton.style.cursor = "pointer";
+                downloadButton.style.transition = "background-color 0.2s";
+                downloadButton.onmouseover = () => downloadButton.style.backgroundColor = "#7b1fa2";
+                downloadButton.onmouseout = () => downloadButton.style.backgroundColor = "#9c27b0";
+                modalContent.appendChild(downloadButton);
+
+                // 閉じるボタン (右上のXアイコン)
+                const closeButton = document.createElement("button");
+                closeButton.innerText = "×";
+                closeButton.style.position = "absolute";
+                closeButton.style.top = "10px";
+                closeButton.style.right = "10px";
+                closeButton.style.padding = "5px 10px";
+                closeButton.style.fontSize = "20px";
+                closeButton.style.backgroundColor = "transparent";
+                closeButton.style.color = "#ccc";
+                closeButton.style.border = "none";
+                closeButton.style.cursor = "pointer";
+                closeButton.style.zIndex = "100001";
+                closeButton.onclick = () => {
+                    modalOverlay.remove();
+                    document.body.style.overflow = "auto"; // 背景スクロールを戻す
+                };
+                modalContent.appendChild(closeButton);
+
+                modalOverlay.appendChild(modalContent);
+                document.body.appendChild(modalOverlay);
+
+                statusDiv.innerText = "画像をモーダル表示しました！";
+                // ▲▲▲ ここまでがモーダル表示の処理 ▲▲▲
 
             } catch (e) {
                 alert("画像生成中にエラーが発生しました: " + e.message);
@@ -168,7 +304,6 @@
         alert("エラーが発生しました: " + e.message);
         console.error(e);
     } finally {
-        // すぐに消すと味気ないので、少し遅れて消す
         setTimeout(() => statusDiv.remove(), 2000);
     }
 })();
