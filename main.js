@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v12 - Final / Data URL Page Replace)
+// CHUNITHM Rating Image Generator - Main Script (v10 - Final / Stable New Tab)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -148,26 +148,24 @@
             try {
                 const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
                 
-                // ▼▼▼ ここからが変更点 ▼▼▼
-                const dataUrl = canvas.toDataURL("image/png");
-
-                statusDiv.innerText = "画像を表示します...";
-                
-                setTimeout(() => {
-                    document.body.innerHTML = '';
-                    document.body.style.margin = '0';
-                    document.body.style.padding = '0';
-                    document.body.style.backgroundColor = 'black';
+                // ▼▼▼ 変更点：「新しいタブで開く」方式のバグを修正 ▼▼▼
+                canvas.toBlob(blob => {
+                    const blobUrl = URL.createObjectURL(blob);
+                    const newTab = window.open(blobUrl, '_blank');
                     
-                    const imageElement = document.createElement('img');
-                    imageElement.src = dataUrl;
-                    imageElement.style.width = '100vw';
-                    imageElement.style.height = '100vh';
-                    imageElement.style.objectFit = 'contain';
+                    // ポップアップがブロックされた場合の警告
+                    if (!newTab) {
+                        alert('ポップアップがブロックされました。このサイトのポップアップを許可してください。');
+                    }
+                    
+                    statusDiv.innerText = "新しいタブで画像を開きました！";
+                    
+                    // メモリ解放処理(revokeObjectURL)を削除。
+                    // これが早すぎて画像の読み込みに失敗する原因でした。
+                    // タブを閉じればブラウザが自動でメモリを解放します。
 
-                    document.body.appendChild(imageElement);
-                }, 500);
-                // ▲▲▲ ここまでが変更点 ▲▲▲
+                }, 'image/png');
+                // ▲▲▲ 変更点ここまで ▲▲▲
 
             } catch (e) {
                 alert("画像生成中にエラーが発生しました: " + e.message);
@@ -181,6 +179,7 @@
     } catch (e) {
         alert("エラーが発生しました: " + e.message);
         console.error(e);
-        statusDiv.remove();
+    } finally {
+        setTimeout(() => statusDiv.remove(), 3000);
     }
 })();
