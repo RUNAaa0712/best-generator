@@ -148,17 +148,12 @@
             try {
                 const canvas = await html2canvas(container, { backgroundColor: "#1c1c1e", useCORS: true, allowTaint: true, width: 1240, windowWidth: 1240 });
                 
-                // ▼▼▼ ここからが変更点 ▼▼▼
                 canvas.toBlob(blob => {
                     const blobUrl = URL.createObjectURL(blob);
                     // 新しいタブで画像を開く
                     window.open(blobUrl, '_blank');
                     statusDiv.innerText = "新しいタブで画像を開きました！";
-                    // Blob URLはタブが閉じられると自動で解放されることが多いですが、
-                    // 念のためこのブックマークレットのコンテキストでは不要なので解放します。
-                    URL.revokeObjectURL(blobUrl);
                 }, 'image/png');
-                // ▲▲▲ ここまでが変更点 ▲▲▲
 
             } catch (e) {
                 alert("画像生成中にエラーが発生しました: " + e.message);
