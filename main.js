@@ -1,4 +1,4 @@
-// CHUNITHM Rating Image Generator - Main Script (v11 - Mobile Save Fix)
+// CHUNITHM Rating Image Generator - Main Script (v9 - Final HTML Modal)
 
 (async () => {
     const GAS_API_URL = "https://script.google.com/macros/s/AKfycbxtftQ0Ng4v5pRWZ5GF-4u5cyo5lgrU_vShr-ImsDt7UZqbOiWX9WN3VPA3l5M0gUyL6g/exec";
@@ -8,10 +8,9 @@
     statusDiv.style.top = "10px";
     statusDiv.style.left = "10px";
     statusDiv.style.padding = "10px";
-    statusDiv.style.backgroundColor = "rgba(0,0,0,0.8)";
+    statusDiv.style.backgroundColor = "black";
     statusDiv.style.color = "white";
     statusDiv.style.zIndex = "9999";
-    statusDiv.style.borderRadius = "5px";
     statusDiv.innerText = "データを取得しています...";
     document.body.appendChild(statusDiv);
 
@@ -49,27 +48,82 @@
         if (!gasResponse.ok) throw new Error(`GAS APIからの応答エラー: ${gasResponse.status}`);
         const imageUrlMap = await gasResponse.json();
 
-        statusDiv.innerText = "画像を生成中...";
+        statusDiv.innerText = "モーダルを生成中...";
 
-        const container = document.createElement("div");
-        container.id = "chunithm-chart-container";
-        container.style.position = "absolute";
-        container.style.left = "-9999px"; // 画面外に配置
-        container.style.top = "0";
-        container.style.width = "1240px";
-        container.style.backgroundColor = "#1c1c1e";
-        container.style.zIndex = "-1";
-        container.style.display = "flex";
-        container.style.flexDirection = "column";
-        container.style.alignItems = "center";
-        container.style.padding = "20px";
-        container.style.boxSizing = "border-box";
+        // ▼▼▼ ここからが新しいモーダル表示の処理 ▼▼▼
+        
+        // --- 1. モーダルの骨格を作成 ---
+        const modalOverlay = document.createElement("div");
+        modalOverlay.style.position = "fixed";
+        modalOverlay.style.top = "0";
+        modalOverlay.style.left = "0";
+        modalOverlay.style.width = "100%";
+        modalOverlay.style.height = "100%";
+        modalOverlay.style.backgroundColor = "rgba(0, 0, 0, 0.85)";
+        modalOverlay.style.zIndex = "100000";
+        modalOverlay.style.display = "flex";
+        modalOverlay.style.justifyContent = "center";
+        modalOverlay.style.alignItems = "center";
+        document.body.style.overflow = "hidden";
 
+        const modalContainer = document.createElement("div");
+        modalContainer.style.backgroundColor = "#1c1c1e";
+        modalContainer.style.width = "95%";
+        modalContainer.style.height = "95%";
+        modalContainer.style.maxWidth = "1280px";
+        modalContainer.style.borderRadius = "8px";
+        modalContainer.style.display = "flex";
+        modalContainer.style.flexDirection = "column";
+
+        const modalHeader = document.createElement("div");
+        modalHeader.style.padding = "15px";
+        modalHeader.style.display = "flex";
+        modalHeader.style.justifyContent = "space-between";
+        modalHeader.style.alignItems = "center";
+        modalHeader.style.borderBottom = "1px solid #444";
+        
+        const modalBody = document.createElement("div");
+        modalBody.id = "chunithm-chart-container-for-canvas"; // html2canvasが対象とするID
+        modalBody.style.overflowY = "auto";
+        modalBody.style.flexGrow = "1";
+        modalBody.style.padding = "20px";
+        modalBody.style.display = "flex";
+        modalBody.style.flexDirection = "column";
+        modalBody.style.alignItems = "center";
+        
+        modalContainer.appendChild(modalHeader);
+        modalContainer.appendChild(modalBody);
+        modalOverlay.appendChild(modalContainer);
+
+        // --- 2. モーダルヘッダーの中身を作成 ---
+        const downloadButton = document.createElement("button");
+        downloadButton.innerText = "ダウンロード";
+        downloadButton.style.padding = "8px 16px";
+        downloadButton.style.backgroundColor = "#9c27b0";
+        downloadButton.style.color = "white";
+        downloadButton.style.border = "none";
+        downloadButton.style.borderRadius = "5px";
+        downloadButton.style.fontWeight = "bold";
+        downloadButton.style.cursor = "pointer";
+
+        const closeButton = document.createElement("button");
+        closeButton.innerText = "×";
+        closeButton.style.fontSize = "24px";
+        closeButton.style.backgroundColor = "transparent";
+        closeButton.style.color = "#ccc";
+        closeButton.style.border = "none";
+        closeButton.style.cursor = "pointer";
+
+        modalHeader.appendChild(downloadButton);
+        modalHeader.appendChild(closeButton);
+
+        // --- 3. モーダルボディの中身（画像化するコンテンツ）を作成 ---
         const now = new Date();
         const timestamp = `${now.getFullYear()}/${String(now.getMonth() + 1).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")} ${String(now.getHours()).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
-
+        
         const headerDiv = document.createElement("div");
         headerDiv.style.width = "100%";
+        headerDiv.style.maxWidth = "1200px";
         headerDiv.style.display = "flex";
         headerDiv.style.justifyContent = "space-between";
         headerDiv.style.alignItems = "center";
@@ -92,13 +146,14 @@
 
         headerDiv.appendChild(nameElement);
         headerDiv.appendChild(timeElement);
-        container.appendChild(headerDiv);
+        modalBody.appendChild(headerDiv);
 
         const gridDiv = document.createElement("div");
         gridDiv.style.display = "flex";
         gridDiv.style.flexWrap = "wrap";
         gridDiv.style.justifyContent = "center";
         gridDiv.style.width = "100%";
+        gridDiv.style.maxWidth = "1200px";
 
         for (const song of musicData) {
             const imageUrl = imageUrlMap[song.title] || "https://placehold.co/200x200/333/FFF?text=NO%5CnIMAGE";
@@ -123,16 +178,14 @@
             const titleP = document.createElement("p");
             titleP.style.fontWeight = "bold";
             titleP.style.fontSize = "14px";
-            titleP.style.margin = "0 0 2px 0";
-            titleP.style.height = "3em"; // 2行分程度の高さを確保
-            titleP.style.lineHeight = "1.5em";
+            titleP.style.marginBottom = "2px";
+            titleP.style.height = "3em";
             titleP.style.overflow = "hidden";
             titleP.style.textOverflow = "ellipsis";
             titleP.style.whiteSpace = "normal";
             titleP.innerText = song.title;
 
             const scoreP = document.createElement("p");
-            scoreP.style.margin = "0";
             scoreP.style.fontSize = "12px";
             scoreP.style.color = "#aaa";
             scoreP.innerText = `スコア: ${song.score}`;
@@ -142,77 +195,58 @@
             card.appendChild(scoreP);
             gridDiv.appendChild(card);
         }
-        container.appendChild(gridDiv);
-        document.body.appendChild(container);
+        modalBody.appendChild(gridDiv);
+        document.body.appendChild(modalOverlay);
+        statusDiv.innerText = "モーダルを表示しました！";
 
-        const script = document.createElement("script");
-        script.src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js";
-        script.onload = async () => {
-            try {
-                const canvas = await html2canvas(container, {
-                    backgroundColor: "#1c1c1e",
-                    useCORS: true,
-                    allowTaint: true,
-                    width: 1240,
-                    windowWidth: 1240
-                });
-
-                // ▼▼▼ 変更点：新しいタブにHTMLを書き込んで画像を表示する方式に変更 ▼▼▼
-                canvas.toBlob(blob => {
-                    const blobUrl = URL.createObjectURL(blob);
-                    const newTab = window.open();
-
-                    if (!newTab) {
-                        alert('ポップアップがブロックされました。このサイトのポップアップを許可してください。');
-                        statusDiv.innerText = "エラー: ポップアップがブロックされました";
-                        return;
-                    }
-
-                    const html = `
-                        <!DOCTYPE html>
-                        <html>
-                        <head>
-                            <title>CHUNITHM Rating Image | ${playerName}</title>
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <style>
-                                body { margin: 0; background-color: #111; display: flex; flex-direction: column; justify-content: center; align-items: center; min-height: 100vh; }
-                                img { max-width: 100%; height: auto; }
-                                p { color: white; font-family: sans-serif; text-align: center; padding: 1em; }
-                            </style>
-                        </head>
-                        <body>
-                            <p>画像を長押しして保存、または右クリックして「名前を付けて画像を保存」を選択してください。</p>
-                            <img src="${blobUrl}" alt="CHUNITHM Rating Image for ${playerName}">
-                        </body>
-                        </html>
-                    `;
-                    newTab.document.open();
-                    newTab.document.write(html);
-                    newTab.document.close();
-                    
-                    statusDiv.innerText = "画像を開きました！長押しで保存できます。";
-                    // 新しいタブが閉じられたときにメモリを解放する
-                    // (必須ではないが、より丁寧な実装)
-                    newTab.addEventListener('beforeunload', () => {
-                        URL.revokeObjectURL(blobUrl);
-                    });
-
-                }, 'image/png');
-                // ▲▲▲ 変更点ここまで ▲▲▲
-
-            } catch (e) {
-                alert("画像生成中にエラーが発生しました: " + e.message);
-                console.error(e);
-            } finally {
-                container.remove();
-            }
+        // --- 4. ボタンのイベントリスナーを設定 ---
+        closeButton.onclick = () => {
+            modalOverlay.remove();
+            document.body.style.overflow = "auto";
         };
-        document.body.appendChild(script);
+
+        downloadButton.onclick = () => {
+            downloadButton.disabled = true;
+            downloadButton.innerText = "生成中...";
+            const script = document.createElement("script");
+            script.src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js";
+            script.onload = async () => {
+                try {
+                    const canvasTarget = document.getElementById("chunithm-chart-container-for-canvas");
+                    const canvas = await html2canvas(canvasTarget, {
+                        backgroundColor: "#1c1c1e",
+                        useCORS: true,
+                        allowTaint: true
+                    });
+                    
+                    canvas.toBlob(blob => {
+                        const blobUrl = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = blobUrl;
+                        link.download = `chunithm_rating_${now.toISOString().slice(0, 10)}.png`;
+                        link.click();
+                        URL.revokeObjectURL(blobUrl);
+                        downloadButton.innerText = "完了!";
+                        setTimeout(() => {
+                           downloadButton.disabled = false;
+                           downloadButton.innerText = "ダウンロード";
+                        }, 2000);
+                    }, 'image/png');
+
+                } catch (e) {
+                    alert("画像生成中にエラーが発生しました: " + e.message);
+                    downloadButton.disabled = false;
+                    downloadButton.innerText = "ダウンロード";
+                }
+            };
+            document.body.appendChild(script);
+        };
+        // ▲▲▲ ここまでが新しいモーダル表示の処理 ▲▲▲
 
     } catch (e) {
         alert("エラーが発生しました: " + e.message);
         console.error(e);
     } finally {
-        setTimeout(() => statusDiv.remove(), 5000); // 表示時間を少し延長
+        setTimeout(() => statusDiv.remove(), 2000);
     }
 })();
