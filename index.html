@@ -37,6 +37,8 @@
                 <p><strong>1. 下のボタンを押してコードをコピー</strong></p>
                 <textarea id="bookmarklet-code" readonly></textarea>
                 <button class="copy-button" onclick="copyCode()">コードをコピー</button>
+                <textarea id="bookmarklet-code2" readonly></textarea>
+                <button class="copy-button" onclick="copyCode2()">コードをコピー</button>
             </div>
         </div>
         
@@ -66,14 +68,27 @@
         const mainScriptUrl = 'https://RUNAaa0712.github.io/best-generator/main.js';
         
         const bookmarkletCode = `javascript:(() => { const script = document.createElement('script'); script.src = '${mainScriptUrl}'; document.body.appendChild(script); })();`;
+        const bookmarkletCode2 = `javascript:javascript%3A(async()%3D>%7Bconst GAS_API_URL%3D"https%3A%2F%2Fscript.google.com%2Fmacros%2Fs%2FAKfycbwfLTp-tyP4V2gXgqgGlvtoFiELY9BrnxP1QURAUx7_3xujoSbp5bUh_7nze5OELN2scg%2Fexec"%3Bconst statusDiv%3Ddocument.createElement("div")%3BstatusDiv.style.position%3D"fixed"%3BstatusDiv.style.top%3D"10px"%3BstatusDiv.style.left%3D"10px"%3BstatusDiv.style.padding%3D"10px"%3BstatusDiv.style.backgroundColor%3D"rgba(0%2C0%2C0%2C0.8)"%3BstatusDiv.style.color%3D"white"%3BstatusDiv.style.zIndex%3D"9999"%3BstatusDiv.style.borderRadius%3D"5px"%3BstatusDiv.innerText%3D"データを取得しています..."%3Bdocument.body.appendChild(statusDiv)%3Btry%7BstatusDiv.innerText%3D"CHUNITHM-NETから情報を取得中..."%3Bconst %5BhomeHtml%2CratingHtml%5D%3Dawait Promise.all(%5B fetch("https%3A%2F%2Fnew.chunithm-net.com%2Fchuni-mobile%2Fhtml%2Fmobile%2Fhome%2F").then(res%3D> res.text())%2Cfetch("https%3A%2F%2Fnew.chunithm-net.com%2Fchuni-mobile%2Fhtml%2Fmobile%2Fhome%2FplayerData%2FratingDetailBest%2F").then(res%3D> res.text())%5D)%3Bconst parser%3Dnew DOMParser()%3Blet playerName%3D"プレイヤー情報なし"%3Btry%7BplayerName%3Dparser.parseFromString(homeHtml%2C"text%2Fhtml").querySelector(".player_name_in").innerText.trim()%3B%7Dcatch(e)%7Bconsole.error("プレイヤー名の取得に失敗%3A"%2Ce)%3B%7Dconst musicData%3DArray.from(parser.parseFromString(ratingHtml%2C"text%2Fhtml").querySelectorAll(".box05 > form")).map(form%3D>(%7Btitle%3A form.querySelector(".music_title").innerText.trim()%2Cscore%3A form.querySelector(".play_musicdata_highscore .text_b").innerText.trim().replace(%2F%2C%2Fg%2C'')%7D))%3Bif(musicData.length%3D%3D%3D0)%7Balert("レーティング対象曲が見つかりません。%5Cnログイン状態を確認してください。")%3BstatusDiv.remove()%3Breturn%3B%7DstatusDiv.innerText%3D"サーバー側で画像を生成中です...%5Cn(最大60秒ほどかかります)"%3Bconst payload%3D%7BplayerName%2CmusicData%7D%3Bconst gasResponse%3Dawait fetch(GAS_API_URL%2C%7Bmethod%3A 'POST'%2Credirect%3A 'follow'%2Cbody%3A JSON.stringify(payload)%2Cheaders%3A%7B'Content-Type'%3A 'text%2Fplain%3Bcharset%3Dutf-8'%7D%7D)%3Bif(!gasResponse.ok)throw new Error(%60APIエラー%3A %24%7BgasResponse.status%7D%60)%3Bconst result%3Dawait gasResponse.json()%3Bif(!result.success)throw new Error(%60画像生成エラー%3A %24%7Bresult.message%7D%60)%3BstatusDiv.innerText%3D"画像を表示します！"%3Bconst imageWindow%3Dwindow.open(""%2C"_blank")%3BimageWindow.document.write(%60<html><head><title>%24%7BplayerName%7DRating Best Image<%2Ftitle><style>body%7Bmargin%3A0%3Bbackground%3A%232a2a2a%3Bdisplay%3Aflex%3Bjustify-content%3Acenter%3Balign-items%3Acenter%3Bmin-height%3A100vh%3B%7Dimg%7Bmax-width%3A100%25%3Bheight%3Aauto%3Bbox-shadow%3A 0 0 20px rgba(0%2C0%2C0%2C0.5)%3B%7D<%2Fstyle><%2Fhead><body><img src%3D"%24%7Bresult.imageData%7D" alt%3D"生成されたレーティング対象曲の画像"><%2Fbody><%2Fhtml>%60)%3BimageWindow.document.close()%3B%7Dcatch(e)%7Balert("エラーが発生しました%3A " %2B e.message)%3Bconsole.error(e)%3BstatusDiv.innerText%3D"エラーが発生しました。"%3B%7Dfinally%7BsetTimeout(()%3D> statusDiv.remove()%2C5000)%3B%7D%7D)()%3Bvoid(0);`;
         
         // ページ内の要素にブックマークレットコードを設定
         document.querySelector('.bookmarklet-link').href = bookmarkletCode;
         document.getElementById('bookmarklet-code').value = bookmarkletCode;
+        document.querySelector('.bookmarklet-link2').href = bookmarkletCode2;
+        document.getElementById('bookmarklet-code2').value = bookmarkletCode2;
 
         // コピーボタンの機能を設定
         function copyCode() {
             const codeTextarea = document.getElementById('bookmarklet-code');
+            codeTextarea.select();
+            navigator.clipboard.writeText(codeTextarea.value).then(() => {
+                alert('コードをコピーしました！');
+            }).catch(err => {
+                console.error('コピーに失敗しました', err);
+                alert('コピーに失敗しました。');
+            });
+        }
+        function copyCode2() {
+            const codeTextarea = document.getElementById('bookmarklet-code2');
             codeTextarea.select();
             navigator.clipboard.writeText(codeTextarea.value).then(() => {
                 alert('コードをコピーしました！');
