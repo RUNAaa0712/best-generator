@@ -1,1 +1,840 @@
-(function(_0x58138e,_0x197f59){const _0x5ea4d9=_0x3b40,_0x2ddb15=_0x58138e();while(!![]){try{const _0x2bbf89=-parseInt(_0x5ea4d9(0x182))/0x1*(-parseInt(_0x5ea4d9(0x1b7))/0x2)+parseInt(_0x5ea4d9(0x156))/0x3+parseInt(_0x5ea4d9(0x1ec))/0x4+-parseInt(_0x5ea4d9(0x1c9))/0x5+parseInt(_0x5ea4d9(0x15c))/0x6+parseInt(_0x5ea4d9(0x18a))/0x7+parseInt(_0x5ea4d9(0x1f6))/0x8*(-parseInt(_0x5ea4d9(0x198))/0x9);if(_0x2bbf89===_0x197f59)break;else _0x2ddb15['push'](_0x2ddb15['shift']());}catch(_0x1b6888){_0x2ddb15['push'](_0x2ddb15['shift']());}}}(_0x519c,0x8d5a5),((async()=>{const _0x373272=_0x3b40,_0x52ccc8=(_0x51e3ce,_0x481d99)=>{const _0x2dfc27=_0x3b40,_0x1f0631=_0x2dfc27(0x16b)+_0x51e3ce;if(document[_0x2dfc27(0x1c7)](_0x1f0631))return;const _0x3f3ed9=document[_0x2dfc27(0x132)](_0x2dfc27(0x1a0));_0x3f3ed9['id']=_0x1f0631,_0x3f3ed9[_0x2dfc27(0x151)]='https://fonts.googleapis.com/css2?family='+_0x51e3ce+_0x2dfc27(0x201)+_0x481d99+_0x2dfc27(0x19a),_0x3f3ed9[_0x2dfc27(0x179)]=_0x2dfc27(0x1ff),document[_0x2dfc27(0x1eb)][_0x2dfc27(0x1ba)](_0x3f3ed9);},_0x487ce4=(_0x41038f,_0x471467)=>{const _0x2d84ed=_0x3b40;if(typeof _0x41038f!==_0x2d84ed(0x154)||typeof _0x471467!==_0x2d84ed(0x154)||isNaN(_0x41038f)||isNaN(_0x471467))return _0x2d84ed(0x152);let _0x30e853=0x0;if(_0x41038f>=0xf6568)_0x30e853=_0x471467+2.15;else{if(_0x41038f>=0xf5f8c)_0x30e853=_0x471467+0x2+(_0x41038f-0xf5f8c)/0x2710;else{if(_0x41038f>=0xf55c8)_0x30e853=_0x471467+1.5+(_0x41038f-0xf55c8)/0x1388;else{if(_0x41038f>=0xf4240)_0x30e853=_0x471467+0x1+(_0x41038f-0xf4240)/0x2710;else{if(_0x41038f>=0xee098)_0x30e853=_0x471467+(_0x41038f-0xee098)/0x61a8;else _0x41038f>=0xdbba0?_0x30e853=_0x471467-0x5+(_0x41038f-0xdbba0)/0x3a98:_0x30e853=0x0;}}}}return Math[_0x2d84ed(0x1fb)](0x0,_0x30e853)[_0x2d84ed(0x15f)](0x4);},_0x3e9fc7=()=>{return new Promise((_0x3e411c,_0x2832e8)=>{const _0x1c9a07=_0x3b40,_0x122c06=document[_0x1c9a07(0x132)]('div');Object[_0x1c9a07(0x1f7)](_0x122c06[_0x1c9a07(0x140)],{'position':_0x1c9a07(0x1cd),'top':'0','left':'0','width':_0x1c9a07(0x1e3),'height':_0x1c9a07(0x1e3),'backgroundColor':_0x1c9a07(0x1cb),'zIndex':_0x1c9a07(0x1b9),'display':_0x1c9a07(0x1d9),'justifyContent':'center','alignItems':'center','fontFamily':_0x1c9a07(0x163)});const _0xcac5c7=document['createElement'](_0x1c9a07(0x1da));Object[_0x1c9a07(0x1f7)](_0xcac5c7[_0x1c9a07(0x140)],{'backgroundColor':_0x1c9a07(0x13e),'padding':_0x1c9a07(0x17b),'borderRadius':_0x1c9a07(0x18d),'width':_0x1c9a07(0x139),'textAlign':_0x1c9a07(0x1de),'boxShadow':_0x1c9a07(0x190)}),_0xcac5c7[_0x1c9a07(0x1e1)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22margin-top:0;\x20margin-bottom:20px;\x20font-size:20px;\x20color:#333;\x22>楽曲データ取得の確認</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:15px;\x20margin-bottom:25px;\x20line-height:1.6;\x20text-align:left;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20CHUNITHM-NETからベスト枠の楽曲データ(30曲)を取得します。<br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong\x20style=\x22color:red;\x22>⚠️\x20サーバー負荷軽減のため、毎曲1.2秒の待機時間があります。</strong><br>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<strong\x20style=\x22color:red;\x22>合計で約1分間の処理を要します。</strong>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20space-between;\x20gap:\x2010px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22cancelBtn\x22\x20style=\x22width:50%;\x20padding:10px;\x20border:1px\x20solid\x20#ccc;\x20border-radius:5px;\x20background-color:#f8f9fa;\x20color:#333;\x20font-size:16px;\x20cursor:pointer;\x22>キャンセル</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22startBtn\x22\x20style=\x22width:50%;\x20padding:10px;\x20border:none;\x20border-radius:5px;\x20background-color:#007bff;\x20color:white;\x20font-size:16px;\x20font-weight:bold;\x20cursor:pointer;\x22>開始する</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20',_0x122c06[_0x1c9a07(0x1ba)](_0xcac5c7),document['body'][_0x1c9a07(0x1ba)](_0x122c06),document[_0x1c9a07(0x1c7)](_0x1c9a07(0x148))['addEventListener'](_0x1c9a07(0x1c8),()=>{const _0x3db338=_0x1c9a07;_0x122c06[_0x3db338(0x1c6)](),_0x3e411c();}),document['getElementById'](_0x1c9a07(0x1a1))[_0x1c9a07(0x1ad)](_0x1c9a07(0x1c8),()=>{const _0x31c1ab=_0x1c9a07;_0x122c06[_0x31c1ab(0x1c6)](),_0x2832e8(new Error(_0x31c1ab(0x19b)));}),_0x122c06[_0x1c9a07(0x1ad)](_0x1c9a07(0x1c8),_0x33eb25=>{const _0x27d41d=_0x1c9a07;_0x33eb25[_0x27d41d(0x1f0)]===_0x122c06&&(_0x122c06['remove'](),_0x2832e8(new Error('User\x20cancelled')));});});},_0x5cb7c6=_0x2448a4=>{return new Promise((_0x237622,_0x5ccbf7)=>{const _0x1d8afe=_0x3b40,_0x2dc5a6='https://runaaa0712.weblike.jp/chunithm/best-generator/styleA_img',_0x51f81b='https://runaaa0712.weblike.jp/chunithm/best-generator/styleB_img',_0x4ce8bb=document[_0x1d8afe(0x132)](_0x1d8afe(0x1da));Object[_0x1d8afe(0x1f7)](_0x4ce8bb['style'],{'position':_0x1d8afe(0x1cd),'top':'0','left':'0','width':_0x1d8afe(0x1e3),'height':_0x1d8afe(0x1e3),'backgroundColor':_0x1d8afe(0x1cb),'zIndex':_0x1d8afe(0x1b9),'display':'flex','justifyContent':_0x1d8afe(0x1de),'alignItems':_0x1d8afe(0x1de),'fontFamily':_0x1d8afe(0x163)});const _0x4a12f8=document['createElement']('div');Object[_0x1d8afe(0x1f7)](_0x4a12f8[_0x1d8afe(0x140)],{'backgroundColor':_0x1d8afe(0x13e),'padding':_0x1d8afe(0x196),'borderRadius':_0x1d8afe(0x18d),'width':'450px','textAlign':_0x1d8afe(0x1ca),'boxShadow':_0x1d8afe(0x190)}),_0x4a12f8[_0x1d8afe(0x1e1)]=_0x1d8afe(0x153)+_0x2dc5a6+'\x22\x20alt=\x22スタイルAのサンプル画像\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22style-option\x22\x20onclick=\x22document.getElementById(\x27styleB\x27).checked\x20=\x20true;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22radio\x22\x20id=\x22styleB\x22\x20name=\x22imageStyle\x22\x20value=\x22B\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22styleB\x22>スタイルB</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x51f81b+'\x22\x20alt=\x22スタイルBのサンプル画像\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22margin-bottom:15px;\x20border-top:\x201px\x20solid\x20#eee;\x20padding-top:\x2015px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20align-items:center;\x20cursor:pointer;\x22\x20id=\x22hideNameLabel\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20id=\x22hideNameCheckbox\x22\x20style=\x22margin-right:8px;\x20width:18px;\x20height:18px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22hideNameCheckbox\x22\x20style=\x22font-size:16px;\x20cursor:pointer;\x22>プレイヤー名を隠す</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22text\x22\x20id=\x22customNameInput\x22\x20placeholder=\x22表示名を入力\x22\x20style=\x22width:calc(100%\x20-\x2022px);\x20padding:10px;\x20margin-top:10px;\x20border:1px\x20solid\x20#ccc;\x20border-radius:5px;\x20font-size:16px;\x20background-color:#f1f1f1;\x22\x20disabled>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22border-top:\x201px\x20solid\x20#eee;\x20padding-top:\x2015px;\x20margin-bottom:25px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:flex;\x20align-items:center;\x20cursor:pointer;\x22\x20id=\x22showPlayCountLabel\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22checkbox\x22\x20id=\x22showPlayCountCheckbox\x22\x20style=\x22margin-right:8px;\x20width:18px;\x20height:18px;\x22\x20checked>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22showPlayCountCheckbox\x22\x20style=\x22font-size:16px;\x20cursor:pointer;\x22>プレイ回数を表示</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22generateBtn\x22\x20style=\x22width:100%;\x20padding:12px;\x20border:none;\x20border-radius:5px;\x20background-color:#007bff;\x20color:white;\x20font-size:16px;\x20font-weight:bold;\x20cursor:pointer;\x22>画像生成</button>\x0a\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20',_0x4ce8bb['appendChild'](_0x4a12f8),document[_0x1d8afe(0x134)][_0x1d8afe(0x1ba)](_0x4ce8bb);const _0x18246b=(_0x31e326,_0x178251)=>{const _0x306bfd=_0x1d8afe,_0x25f842=document[_0x306bfd(0x1c7)](_0x31e326);_0x25f842&&_0x25f842[_0x306bfd(0x1ad)](_0x306bfd(0x1c8),_0x220371=>{const _0x48d906=_0x306bfd;if(_0x220371['target']['id']!==_0x178251){const _0x3bc3c5=document['getElementById'](_0x178251);_0x3bc3c5[_0x48d906(0x12f)]=!_0x3bc3c5[_0x48d906(0x12f)],_0x3bc3c5[_0x48d906(0x16c)](new Event('change'));}});};_0x18246b('hideNameLabel','hideNameCheckbox'),_0x18246b(_0x1d8afe(0x189),_0x1d8afe(0x173)),document[_0x1d8afe(0x1c7)]('hideNameCheckbox')[_0x1d8afe(0x1ad)]('change',_0x5e4999=>{const _0x317195=_0x1d8afe,_0x7df869=document[_0x317195(0x1c7)](_0x317195(0x14b));_0x7df869[_0x317195(0x1c4)]=!_0x5e4999[_0x317195(0x1f0)]['checked'],_0x7df869['style'][_0x317195(0x13d)]=_0x5e4999[_0x317195(0x1f0)][_0x317195(0x12f)]?_0x317195(0x13e):_0x317195(0x1a6),_0x5e4999[_0x317195(0x1f0)]['checked']&&(_0x7df869[_0x317195(0x185)]=_0x317195(0x149),_0x7df869[_0x317195(0x1e8)]());}),document[_0x1d8afe(0x1c7)](_0x1d8afe(0x1f2))[_0x1d8afe(0x1ad)](_0x1d8afe(0x1c8),()=>{const _0x50a589=_0x1d8afe;let _0x501e19=_0x2448a4;document[_0x50a589(0x1c7)](_0x50a589(0x18c))[_0x50a589(0x12f)]&&(_0x501e19=document[_0x50a589(0x1c7)](_0x50a589(0x14b))[_0x50a589(0x185)]||'PLAYER');const _0x565f36={'playerName':_0x501e19,'showPlayCount':document[_0x50a589(0x1c7)](_0x50a589(0x173))[_0x50a589(0x12f)],'style':document[_0x50a589(0x1e0)](_0x50a589(0x188))[_0x50a589(0x185)]};_0x4ce8bb[_0x50a589(0x1c6)](),_0x237622(_0x565f36);}),_0x4ce8bb['addEventListener'](_0x1d8afe(0x1c8),_0x5a6b04=>{const _0x476a9b=_0x1d8afe;_0x5a6b04[_0x476a9b(0x1f0)]===_0x4ce8bb&&(_0x4ce8bb[_0x476a9b(0x1c6)](),_0x5ccbf7(new Error(_0x476a9b(0x19b))));});});},_0x21b8e6=(_0x3a4858,_0x103787,_0x4d77a4,_0x202b97)=>{const _0x1886f0=_0x3b40,_0x5bd6a1=document[_0x1886f0(0x132)](_0x1886f0(0x1da));Object[_0x1886f0(0x1f7)](_0x5bd6a1[_0x1886f0(0x140)],{'position':_0x1886f0(0x1cd),'top':'0','left':'0','width':_0x1886f0(0x1e3),'height':_0x1886f0(0x1e3),'backgroundColor':_0x1886f0(0x1cb),'zIndex':'10002','display':_0x1886f0(0x1d9),'justifyContent':_0x1886f0(0x1de),'alignItems':'center','fontFamily':_0x1886f0(0x163),'padding':_0x1886f0(0x1d2),'boxSizing':_0x1886f0(0x144),'overflowY':_0x1886f0(0x137)});const _0x33eee3=document[_0x1886f0(0x132)](_0x1886f0(0x1da));Object[_0x1886f0(0x1f7)](_0x33eee3[_0x1886f0(0x140)],{'backgroundColor':'white','padding':_0x1886f0(0x1d2),'borderRadius':_0x1886f0(0x18d),'width':_0x1886f0(0x137),'maxWidth':'90%','textAlign':_0x1886f0(0x1de),'boxShadow':_0x1886f0(0x193)});const _0x5a1cbd=_0x1886f0(0x19d)+_0x202b97+'_'+new Date()['toISOString']()[_0x1886f0(0x172)](0x0,0xa)+_0x1886f0(0x199);_0x33eee3[_0x1886f0(0x1e1)]=_0x1886f0(0x1e9)+_0x103787+'\x22\x20style=\x22width:\x20100%;\x20height:\x20auto;\x20display:\x20block;\x20max-width:\x20100%;\x22>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:14px;\x20margin-bottom:15px;\x20color:#666;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20👆\x20上記画像を長押し、または以下のボタンで保存できます。\x0a\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22display:\x20flex;\x20justify-content:\x20center;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<button\x20id=\x22downloadBtn\x22\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20style=\x22padding:10px\x2020px;\x20border:none;\x20border-radius:5px;\x20background-color:#28a745;\x20color:white;\x20font-size:16px;\x20font-weight:bold;\x20cursor:pointer;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20画像をダウンロード\x20('+(_0x3a4858[_0x1886f0(0x207)]/0x400/0x400)['toFixed'](0x2)+_0x1886f0(0x1f8),_0x5bd6a1['appendChild'](_0x33eee3),document[_0x1886f0(0x134)][_0x1886f0(0x1ba)](_0x5bd6a1),document['getElementById'](_0x1886f0(0x16e))[_0x1886f0(0x1ad)](_0x1886f0(0x1c8),()=>{const _0x37c7f2=_0x1886f0,_0x60f5d4=URL[_0x37c7f2(0x171)](_0x3a4858),_0x3d4ec4=document[_0x37c7f2(0x132)]('a');_0x3d4ec4['href']=_0x60f5d4,_0x3d4ec4[_0x37c7f2(0x195)]=_0x5a1cbd,document[_0x37c7f2(0x134)][_0x37c7f2(0x1ba)](_0x3d4ec4),_0x3d4ec4[_0x37c7f2(0x1c8)](),document[_0x37c7f2(0x134)][_0x37c7f2(0x165)](_0x3d4ec4),URL[_0x37c7f2(0x14a)](_0x60f5d4);}),document[_0x1886f0(0x1c7)]('closeBtn')['addEventListener'](_0x1886f0(0x1c8),()=>{const _0x37cc6b=_0x1886f0;_0x5bd6a1[_0x37cc6b(0x1c6)]();}),_0x5bd6a1[_0x1886f0(0x1ad)](_0x1886f0(0x1c8),_0x182e1f=>{const _0xfb9343=_0x1886f0;_0x182e1f[_0xfb9343(0x1f0)]===_0x5bd6a1&&_0x5bd6a1['remove']();});},_0x293ceb=async(_0x3eea72,_0x44a5be,_0x5961ea=0.85)=>{const _0x44f66a=_0x3b40,_0x4a4d89=0x2*0x400*0x400;let _0x421b64=_0x5961ea,_0x5ef8d4=null,_0x2b06d0=null;_0x5ef8d4=await html2canvas(_0x3eea72,{'backgroundColor':_0x44f66a(0x16f),'useCORS':!![],'allowTaint':!![]});let _0x18a3cc=0x0;while(_0x18a3cc<0xa){_0x2b06d0=await new Promise(_0x227236=>_0x5ef8d4[_0x44f66a(0x15b)](_0x227236,_0x44f66a(0x1a7),_0x421b64));if(!_0x2b06d0||_0x2b06d0['size']<=_0x4a4d89)break;const _0x270c9e=_0x4a4d89/_0x2b06d0[_0x44f66a(0x207)];_0x421b64*=_0x270c9e*0.9,_0x421b64=Math[_0x44f66a(0x1fb)](0.1,_0x421b64),_0x18a3cc++;}if(!_0x2b06d0)throw new Error('画像ファイル生成に失敗しました。');const _0x59ddeb=await new Promise(_0x2d1fa3=>{const _0x40d8a5=_0x44f66a,_0x4f5eb9=new FileReader();_0x4f5eb9[_0x40d8a5(0x200)]=()=>_0x2d1fa3(_0x4f5eb9[_0x40d8a5(0x203)]),_0x4f5eb9[_0x40d8a5(0x1a4)](_0x2b06d0);});return{'blob':_0x2b06d0,'dataUrl':_0x59ddeb};};try{await _0x3e9fc7();}catch(_0x496be8){if(_0x496be8[_0x373272(0x1f5)]==='User\x20cancelled')return;throw _0x496be8;}_0x52ccc8(_0x373272(0x1a9),0x384);const _0x3d76ec='https://runaaa0712.weblike.jp/api/chunithm/v1/const/query.php',_0x138ea9={0x0:_0x373272(0x131),0x1:_0x373272(0x180),0x2:_0x373272(0x1b5),0x3:_0x373272(0x1aa),0x4:_0x373272(0x17d)},_0x339241=document[_0x373272(0x132)](_0x373272(0x1da));Object[_0x373272(0x1f7)](_0x339241[_0x373272(0x140)],{'position':'fixed','top':'0','left':'0','width':_0x373272(0x1e3),'height':_0x373272(0x1e3),'backgroundColor':_0x373272(0x1cb),'zIndex':'10000','display':_0x373272(0x1d9),'justifyContent':_0x373272(0x1de),'alignItems':_0x373272(0x1de),'color':_0x373272(0x17f),'fontFamily':'\x27Helvetica\x20Neue\x27,\x20Arial,\x20sans-serif'});const _0x3d9963=document[_0x373272(0x132)](_0x373272(0x1da));Object[_0x373272(0x1f7)](_0x3d9963[_0x373272(0x140)],{'backgroundColor':_0x373272(0x13e),'padding':_0x373272(0x18e),'borderRadius':'10px','textAlign':_0x373272(0x1de),'boxShadow':'0\x205px\x2015px\x20rgba(0,0,0,0.3)'});const _0xed1c05=document[_0x373272(0x132)]('p');Object[_0x373272(0x1f7)](_0xed1c05[_0x373272(0x140)],{'fontSize':'18px','fontWeight':_0x373272(0x1e6),'margin':_0x373272(0x141),'lineHeight':_0x373272(0x17e)});const _0x155403=document[_0x373272(0x132)]('p');Object['assign'](_0x155403[_0x373272(0x140)],{'fontSize':_0x373272(0x1d7),'margin':'0','minHeight':'20px'}),_0x3d9963['appendChild'](_0xed1c05),_0x3d9963[_0x373272(0x1ba)](_0x155403),_0x339241[_0x373272(0x1ba)](_0x3d9963),document[_0x373272(0x134)][_0x373272(0x1ba)](_0x339241);try{_0xed1c05[_0x373272(0x130)]=_0x373272(0x191),_0x155403['innerText']=_0x373272(0x194);const [_0x22d7c5,_0x162c8a]=await Promise[_0x373272(0x159)]([fetch(_0x373272(0x166))[_0x373272(0x1b4)](_0x1a78e9=>_0x1a78e9[_0x373272(0x184)]()),fetch(_0x373272(0x1a8))[_0x373272(0x1b4)](_0x18258d=>_0x18258d['text']())]),_0x3c4693=new DOMParser();let _0x41053f=_0x373272(0x138);try{const _0x52110b=_0x3c4693[_0x373272(0x1a5)](_0x22d7c5,'text/html'),_0x340972=_0x52110b[_0x373272(0x1e0)](_0x373272(0x19e));_0x340972&&(_0x41053f=_0x340972[_0x373272(0x130)][_0x373272(0x14d)]());}catch(_0x65aaf3){console[_0x373272(0x146)](_0x373272(0x16a),_0x65aaf3);}const _0x2b9761=_0x3c4693['parseFromString'](_0x162c8a,'text/html'),_0x1f7d54=Array['from'](_0x2b9761[_0x373272(0x1d3)](_0x373272(0x1c0)));if(_0x1f7d54[_0x373272(0x1ae)]===0x0)throw new Error(_0x373272(0x14e));const _0x36572a=[];for(let _0x479579=0x0;_0x479579<_0x1f7d54[_0x373272(0x1ae)];_0x479579++){const _0x1e8690=_0x1f7d54[_0x479579],_0x2d4191=_0x1e8690['querySelector'](_0x373272(0x175))[_0x373272(0x130)][_0x373272(0x14d)]();_0xed1c05[_0x373272(0x1e1)]=_0x373272(0x145)+(_0x479579+0x1)+'/'+_0x1f7d54['length']+')',_0x155403[_0x373272(0x130)]=_0x2d4191;const _0x2d063f=_0x1e8690[_0x373272(0x1e0)](_0x373272(0x1a3))[_0x373272(0x130)][_0x373272(0x14d)](),_0x6afa6f=parseInt(_0x2d063f[_0x373272(0x13f)](/,/g,''),0xa),_0x390adf=new FormData(_0x1e8690)[_0x373272(0x15d)](_0x373272(0x1ea)),_0x567260=_0x138ea9[_0x390adf]||_0x373272(0x1bf);let _0x1df2d4=_0x373272(0x1d8),_0x209e87=_0x373272(0x1d8),_0x150d5e=_0x373272(0x143),_0x49b1bc=_0x373272(0x152);try{const _0x48c52a=new URLSearchParams(new FormData(_0x1e8690))[_0x373272(0x208)](),_0x4ea5dc=await fetch('https://new.chunithm-net.com/chuni-mobile/html/mobile/record/musicGenre/sendMusicDetail/',{'method':_0x373272(0x187),'headers':{'Content-Type':_0x373272(0x183)},'body':_0x48c52a}),_0x51bd14=await _0x4ea5dc[_0x373272(0x184)](),_0x4c180a=new DOMParser()[_0x373272(0x1a5)](_0x51bd14,'text/html');_0x1df2d4=_0x4c180a['querySelector'](_0x373272(0x1ac))?.['src']||_0x373272(0x1d8);let _0x1bac47='';switch(_0x390adf){case'4':_0x1bac47=_0x373272(0x1c5);break;case'3':_0x1bac47=_0x373272(0x13c);break;case'2':_0x1bac47=_0x373272(0x1c1);break;}if(_0x1bac47){const _0xc0df62=_0x4c180a[_0x373272(0x1e0)](_0x1bac47);if(_0xc0df62)for(const _0xe549f of _0xc0df62[_0x373272(0x1d3)]('.musicdata_score_title')){if(_0xe549f[_0x373272(0x130)][_0x373272(0x1f1)](_0x373272(0x192))){_0x209e87=_0xe549f[_0x373272(0x161)]['innerText']['trim']();break;}}}}catch(_0x13b32b){console[_0x373272(0x146)]('「'+_0x2d4191+_0x373272(0x1cf),_0x13b32b);}try{const _0x1964e3=await fetch(_0x3d76ec+'?song='+encodeURIComponent(_0x2d4191)+_0x373272(0x1b8)+_0x567260);if(_0x1964e3['ok']){const _0x114138=await _0x1964e3['json']();_0x114138&&_0x114138['定数値']&&(_0x150d5e=_0x114138[_0x373272(0x1d6)],_0x49b1bc=_0x487ce4(_0x6afa6f,parseFloat(_0x150d5e)));}}catch(_0x1fd54b){console[_0x373272(0x146)]('「'+_0x2d4191+'」のAPI通信エラー:',_0x1fd54b);}_0x36572a[_0x373272(0x1a2)]({'title':_0x2d4191,'score':_0x2d063f,'jacketUrl':_0x1df2d4,'playCount':_0x209e87,'constant':_0x150d5e,'ratingValue':_0x49b1bc,'diffValue':_0x390adf}),await new Promise(_0x113331=>setTimeout(_0x113331,0x4b0));}_0x339241[_0x373272(0x140)][_0x373272(0x1b3)]='none';const _0xf0b0fc=await _0x5cb7c6(_0x41053f);_0x41053f=_0xf0b0fc[_0x373272(0x18f)],_0x339241[_0x373272(0x140)][_0x373272(0x1b3)]=_0x373272(0x1d9),_0xed1c05[_0x373272(0x130)]=_0x373272(0x1cc),_0x155403[_0x373272(0x130)]=_0x373272(0x19c);let _0x380cce=0x0,_0x5eb783=0x0;_0x36572a[_0x373272(0x209)](_0x52720d=>{const _0x406ef0=_0x373272,_0x11e6ce=parseFloat(_0x52720d['ratingValue']);if(!isNaN(_0x11e6ce)){const _0x1e3f74=Math[_0x406ef0(0x14c)](_0x11e6ce*0x64)/0x64;_0x380cce+=_0x1e3f74,_0x5eb783++;}});const _0x1c59a9=_0x5eb783>0x0?(_0x380cce/_0x5eb783)[_0x373272(0x15f)](0x4):_0x373272(0x1b2),_0xfb23f2=document[_0x373272(0x132)](_0x373272(0x1da));_0xfb23f2['id']='chunithm-chart-container',Object[_0x373272(0x1f7)](_0xfb23f2['style'],{'position':'absolute','left':_0x373272(0x181),'top':'0','width':_0x373272(0x186),'backgroundColor':_0x373272(0x16f),'zIndex':'-1','display':_0x373272(0x1d9),'flexDirection':_0x373272(0x1e5),'alignItems':_0x373272(0x1de),'fontFamily':_0x373272(0x163),'boxSizing':'border-box'});const _0x2bcfa0=document[_0x373272(0x132)](_0x373272(0x1da));Object[_0x373272(0x1f7)](_0x2bcfa0[_0x373272(0x140)],{'width':'100%','padding':_0x373272(0x1db),'display':_0x373272(0x1d9),'justifyContent':'space-between','alignItems':_0x373272(0x1de),'background':_0x373272(0x17c),'color':'white','boxSizing':_0x373272(0x144)}),_0x2bcfa0[_0x373272(0x1e1)]='<h1\x20style=\x22margin:0;\x20font-size:28px;\x20font-weight:bold;\x22>るなぁぁ版べ枠ジェネレーター</h1><p\x20style=\x22margin:0;\x20font-size:16px;\x20color:#aaa;\x22>Creator：@RuuNaa00</p>',_0xfb23f2[_0x373272(0x1ba)](_0x2bcfa0);const _0x119782=new Date(),_0xe3d778=_0x119782['getFullYear']()+'/'+String(_0x119782['getMonth']()+0x1)['padStart'](0x2,'0')+'/'+String(_0x119782[_0x373272(0x147)]())[_0x373272(0x1ef)](0x2,'0')+'\x20'+String(_0x119782[_0x373272(0x1be)]())['padStart'](0x2,'0')+':'+String(_0x119782[_0x373272(0x1b6)]())[_0x373272(0x1ef)](0x2,'0'),_0x30250c=document['createElement']('div');Object[_0x373272(0x1f7)](_0x30250c[_0x373272(0x140)],{'width':_0x373272(0x1e3),'display':_0x373272(0x1d9),'justifyContent':_0x373272(0x162),'alignItems':_0x373272(0x1de),'padding':_0x373272(0x1d2),'margin':_0x373272(0x12d),'boxSizing':'border-box'}),_0x30250c['innerHTML']=_0x373272(0x15e)+_0x41053f+_0x373272(0x1fe)+_0x1c59a9+_0x373272(0x1f9)+_0xe3d778+_0x373272(0x178),_0xfb23f2['appendChild'](_0x30250c);const _0x4cda14=document[_0x373272(0x132)](_0x373272(0x1da));Object['assign'](_0x4cda14[_0x373272(0x140)],{'display':_0x373272(0x1d9),'flexWrap':_0x373272(0x136),'justifyContent':_0x373272(0x1de),'width':_0x373272(0x1e3),'padding':'0\x2010px','boxSizing':_0x373272(0x144)}),_0x36572a[_0x373272(0x209)]((_0x1a3820,_0x30aa59)=>{const _0x2cf420=_0x373272,_0x16f994=document[_0x2cf420(0x132)](_0x2cf420(0x1da));Object[_0x2cf420(0x1f7)](_0x16f994['style'],{'width':'calc(20%\x20-\x2020px)','margin':'10px','backgroundColor':_0x2cf420(0x1df),'color':_0x2cf420(0x1c3),'borderRadius':_0x2cf420(0x13b),'boxSizing':_0x2cf420(0x144),'textAlign':_0x2cf420(0x1de),'position':'relative','border':_0x2cf420(0x164)});const _0x270df9={0x2:_0x2cf420(0x176),0x3:_0x2cf420(0x197),0x4:_0x2cf420(0x177)};if(_0x270df9[_0x1a3820[_0x2cf420(0x1bd)]])_0x16f994[_0x2cf420(0x140)][_0x2cf420(0x158)]=_0x270df9[_0x1a3820[_0x2cf420(0x1bd)]];const _0x3164df=document[_0x2cf420(0x132)](_0x2cf420(0x1ce));_0x3164df[_0x2cf420(0x1bb)]=_0x1a3820[_0x2cf420(0x12e)],Object['assign'](_0x3164df['style'],{'width':_0x2cf420(0x1e3),'height':_0x2cf420(0x137),'borderRadius':'4px\x204px\x200\x200','borderBottom':_0x2cf420(0x1d0),'display':_0x2cf420(0x1af)});const _0x36a45f=document[_0x2cf420(0x132)]('div');Object[_0x2cf420(0x1f7)](_0x36a45f[_0x2cf420(0x140)],{'position':_0x2cf420(0x1bc),'padding':_0x2cf420(0x168),'overflow':'hidden'}),_0x36a45f[_0x2cf420(0x1e1)]=_0x2cf420(0x1b0)+(_0x30aa59+0x1)+_0x2cf420(0x204);const _0x4bc336={'position':_0x2cf420(0x1bc),'zIndex':'1'},_0x590e4a=document[_0x2cf420(0x132)]('p');_0x590e4a[_0x2cf420(0x130)]=_0x1a3820[_0x2cf420(0x13a)];const _0x1a8755=parseInt(_0x1a3820[_0x2cf420(0x19f)]['replace'](/,/g,''),0xa);let _0x2bbee1='',_0x5d324c=_0x2cf420(0x1c3);if(_0x1a8755>=0xf6568)_0x2bbee1=_0x2cf420(0x1ed),_0x5d324c=_0x2cf420(0x1dd);else{if(_0x1a8755>=0xf5f8c)_0x2bbee1='SSS',_0x5d324c='#ffd700';else{if(_0x1a8755>=0xf55c8)_0x2bbee1=_0x2cf420(0x1c2),_0x5d324c='#f0f0f0';else _0x1a8755>=0xf4240&&(_0x2bbee1='SS',_0x5d324c=_0x2cf420(0x160));}}const _0x17d6b0=document[_0x2cf420(0x132)]('p');_0x17d6b0[_0x2cf420(0x1e1)]=_0x2cf420(0x14f)+_0x1a3820[_0x2cf420(0x19f)]+_0x2cf420(0x1ee)+_0x5d324c+_0x2cf420(0x133)+_0x2bbee1+_0x2cf420(0x150);if(_0xf0b0fc[_0x2cf420(0x140)]==='A'){Object[_0x2cf420(0x1f7)](_0x590e4a['style'],_0x4bc336,{'fontWeight':_0x2cf420(0x1e6),'fontSize':_0x2cf420(0x169),'marginBottom':_0x2cf420(0x1e4),'height':_0x2cf420(0x1f4),'lineHeight':_0x2cf420(0x202),'overflow':_0x2cf420(0x174)}),Object[_0x2cf420(0x1f7)](_0x17d6b0[_0x2cf420(0x140)],_0x4bc336,{'fontSize':'13px','color':_0x2cf420(0x1e2),'margin':_0x2cf420(0x155)});const _0x373c83=document[_0x2cf420(0x132)]('p');_0x373c83[_0x2cf420(0x130)]='定数:\x20'+_0x1a3820['constant'],Object['assign'](_0x373c83[_0x2cf420(0x140)],_0x4bc336,{'fontSize':_0x2cf420(0x1e7),'color':_0x2cf420(0x135),'margin':_0x2cf420(0x155),'fontWeight':_0x2cf420(0x1e6)});const _0x9db879=document[_0x2cf420(0x132)]('p');_0x9db879[_0x2cf420(0x130)]='RATE:\x20'+_0x1a3820[_0x2cf420(0x1d5)],Object['assign'](_0x9db879[_0x2cf420(0x140)],_0x4bc336,{'fontSize':'14px','color':_0x2cf420(0x1dd),'margin':'0\x200\x204px\x200','fontWeight':_0x2cf420(0x1e6),'border':_0x2cf420(0x1d1),'borderRadius':'4px','padding':_0x2cf420(0x1d4),'backgroundColor':'#333'}),_0x36a45f[_0x2cf420(0x1ba)](_0x590e4a),_0x36a45f[_0x2cf420(0x1ba)](_0x17d6b0),_0x36a45f['appendChild'](_0x373c83),_0x36a45f['appendChild'](_0x9db879);}else{Object['assign'](_0x590e4a[_0x2cf420(0x140)],_0x4bc336,{'fontWeight':'bold','fontSize':_0x2cf420(0x1d7),'marginBottom':_0x2cf420(0x1e4),'height':'1.6em','lineHeight':_0x2cf420(0x202),'overflow':_0x2cf420(0x174),'whiteSpace':_0x2cf420(0x1ab),'textOverflow':_0x2cf420(0x206)}),Object[_0x2cf420(0x1f7)](_0x17d6b0['style'],_0x4bc336,{'fontSize':_0x2cf420(0x169),'color':'#ccc','margin':_0x2cf420(0x155)});const _0x4a2ecc=document[_0x2cf420(0x132)](_0x2cf420(0x1da));_0x4a2ecc['innerHTML']=_0x2cf420(0x18b)+_0x1a3820['constant']+_0x2cf420(0x157)+_0x1a3820['ratingValue']+'</span>',Object['assign'](_0x4a2ecc[_0x2cf420(0x140)],{'display':_0x2cf420(0x1d9),'justifyContent':'center','alignItems':_0x2cf420(0x1de),'gap':'8px','margin':_0x2cf420(0x155),'border':_0x2cf420(0x1d1),'borderRadius':_0x2cf420(0x1e4),'padding':'2px\x208px','backgroundColor':_0x2cf420(0x17f)}),_0x36a45f[_0x2cf420(0x1ba)](_0x590e4a),_0x36a45f[_0x2cf420(0x1ba)](_0x17d6b0),_0x36a45f['appendChild'](_0x4a2ecc);}if(_0xf0b0fc[_0x2cf420(0x12c)]){const _0x1d2fb2=document[_0x2cf420(0x132)]('p');_0x1d2fb2[_0x2cf420(0x130)]=_0x2cf420(0x1fc)+_0x1a3820[_0x2cf420(0x205)],Object[_0x2cf420(0x1f7)](_0x1d2fb2[_0x2cf420(0x140)],_0x4bc336,{'fontSize':_0x2cf420(0x16d),'color':_0x2cf420(0x20a),'margin':'0'}),_0x36a45f[_0x2cf420(0x1ba)](_0x1d2fb2);}_0x16f994['appendChild'](_0x3164df),_0x16f994[_0x2cf420(0x1ba)](_0x36a45f),_0x4cda14[_0x2cf420(0x1ba)](_0x16f994);}),_0xfb23f2[_0x373272(0x1ba)](_0x4cda14);const _0x163e14=document[_0x373272(0x132)](_0x373272(0x1da));Object[_0x373272(0x1f7)](_0x163e14['style'],{'width':'100%','padding':'20px','marginTop':_0x373272(0x1d2),'color':_0x373272(0x142),'fontSize':_0x373272(0x16d),'textAlign':_0x373272(0x1de),'boxSizing':_0x373272(0x144),'borderTop':_0x373272(0x1d0)}),_0x163e14[_0x373272(0x1e1)]=_0x373272(0x1fa),_0xfb23f2[_0x373272(0x1ba)](_0x163e14),document[_0x373272(0x134)]['appendChild'](_0xfb23f2);const _0x692d10=document['createElement']('script');_0x692d10['src']=_0x373272(0x170),document['body'][_0x373272(0x1ba)](_0x692d10),_0x692d10[_0x373272(0x1dc)]=async()=>{const _0x15f7cb=_0x373272;try{await new Promise(_0x417ed2=>setTimeout(_0x417ed2,0x1f4));const {blob:_0x4d228a,dataUrl:_0x247755}=await _0x293ceb(_0xfb23f2,_0x41053f);_0x339241[_0x15f7cb(0x1c6)]();const _0x5636e2=window['open']();_0x5636e2&&(_0x5636e2[_0x15f7cb(0x1b1)]['write'](_0x15f7cb(0x17a)+_0x247755+_0x15f7cb(0x167)),_0x5636e2[_0x15f7cb(0x1b1)][_0x15f7cb(0x1f3)]()),_0x21b8e6(_0x4d228a,_0x247755,_0x1c59a9,_0x41053f),!_0x5636e2&&alert(_0x15f7cb(0x15a));}catch(_0x1919ed){throw _0x1919ed;}finally{_0xfb23f2[_0x15f7cb(0x1c6)]();}};}catch(_0x374ca4){_0x374ca4[_0x373272(0x1f5)]!==_0x373272(0x19b)&&alert(_0x373272(0x1fd)+_0x374ca4['message']);if(_0x339241)_0x339241['remove']();}})()));function _0x3b40(_0x2c58d3,_0x4392b6){const _0x519c31=_0x519c();return _0x3b40=function(_0x3b402e,_0x4cbfd2){_0x3b402e=_0x3b402e-0x12c;let _0x59f7b4=_0x519c31[_0x3b402e];return _0x59f7b4;},_0x3b40(_0x2c58d3,_0x4392b6);}function _0x519c(){const _0x4f2be8=['text','value','1240px','POST','input[name=\x22imageStyle\x22]:checked','showPlayCountLabel','7441777FgWJox','<span\x20style=\x22font-size:13px;\x20color:#aadeff;\x20font-weight:bold;\x20position:relative;\x20z-index:1;\x22>定数:\x20','hideNameCheckbox','10px','30px\x2040px','playerName','0\x205px\x2015px\x20rgba(0,0,0,0.3)','必要なページ情報を取得中...','プレイ回数','0\x205px\x2015px\x20rgba(0,0,0,0.5)','プレイヤー情報\x20/\x20ベスト枠一覧','download','25px','#800080','25911yyJcoF','.jpeg','&display=swap','User\x20cancelled','しばらくお待ちください...','chunithm_best_rating_','.player_name_in','score','link','cancelBtn','push','.play_musicdata_highscore\x20.text_b','readAsDataURL','parseFromString','#f1f1f1','image/jpeg','https://new.chunithm-net.com/chuni-mobile/html/mobile/home/playerData/ratingDetailBest/','Orbitron','MASTER','nowrap','.play_jacket_img\x20img','addEventListener','length','block','<div\x20style=\x22position:absolute;\x20right:-10px;\x20bottom:-25px;\x20font-size:80px;\x20font-weight:900;\x20font-family:Orbitron,\x20sans-serif;\x20color:rgba(255,255,255,0.1);\x20z-index:0;\x20line-height:1;\x20user-select:none;\x22>#','document','算出不可','display','then','EXPERT','getMinutes','1741346GUxqWT','&difficulty=','10001','appendChild','src','relative','diffValue','getHours','UNKNOWN','.box05\x20>\x20form','.bg_expert','SS+','#eee','disabled','.bg_ultima','remove','getElementById','click','5122465ZyrZNN','left','rgba(0,\x200,\x200,\x200.75)','画像を生成中...','fixed','img','」の詳細取得エラー:','1px\x20solid\x20#444','1px\x20solid\x20#555','20px','querySelectorAll','2px\x200','ratingValue','定数値','16px','取得失敗','flex','div','15px\x2025px','onload','#ffb84b','center','#222','querySelector','innerHTML','#ccc','100%','4px','column','bold','13px','focus','\x0a\x20\x20\x20\x20\x20\x20<h3\x20style=\x22margin-top:0;\x20margin-bottom:15px;\x20font-size:20px;\x20color:#333;\x22>画像生成完了🎉</h3>\x0a\x20\x20\x20\x20\x20\x20<p\x20style=\x22font-size:16px;\x20margin-bottom:10px;\x20line-height:1.5;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20画像は新しいタブで開かれました。\x0a\x20\x20\x20\x20\x20\x20</p>\x0a\x20\x20\x20\x20\x20\x20<div\x20style=\x22max-height:\x2050vh;\x20overflow-y:\x20auto;\x20border:\x201px\x20solid\x20#ccc;\x20margin-bottom:\x2015px;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','diff','head','403384NzwumZ','SSS+','\x20<span\x20style=\x22color:','padStart','target','includes','generateBtn','close','3.2em','message','1816BvheRt','assign','MB)\x0a\x20\x20\x20\x20\x20\x20\x20\x20</button>\x0a\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20<button\x20id=\x22closeBtn\x22\x20style=\x22width:100%;\x20padding:10px;\x20border:1px\x20solid\x20#ccc;\x20border-radius:5px;\x20background-color:white;\x20color:#333;\x20font-size:16px;\x20cursor:pointer;\x20margin-top:15px;\x22>閉じる</button>\x0a\x20\x20\x20\x20','</p></div><p\x20style=\x22color:#aaa;\x20margin:0;\x20font-size:16px;\x22>Generated:\x20','この画像はCHUNITHM-NETの表示内容を元に、ブックマークレットによって作成されました。<br>この画像は非公式ツールによって生成されたものであり、SEGA公式とは一切関係ありません。<br>楽曲ジャケット画像の著作権は、全て著作権所持者に帰属します。<br><br>本ページの情報はchunirecおよび<a\x20href=\x22https://chuni.kichi2004.jp/charts\x22\x20target=\x22_blank\x22\x20rel=\x22noopener\x20noreferrer\x22\x20style=\x22color:\x20#aadeff;\x20text-decoration:\x20none;\x22>譜面定数メインフレーム</a>様のデータに基づきます。楽曲の定数は正確ではない場合があります。','max','プレイ回数:\x20','エラーが発生しました:\x20','</h2><p\x20style=\x22color:#ffb84b;\x20margin:0;\x20font-size:24px;\x20font-weight:bold;\x22>BEST枠平均RATE:\x20','stylesheet','onloadend',':wght@','1.6em','result','</div>','playCount','ellipsis','size','toString','forEach','#888','showPlayCount','20px\x200','jacketUrl','checked','innerText','BASIC','createElement',';\x20font-weight:bold;\x22>','body','#aadeff','wrap','auto','プレイヤー情報なし','350px','title','8px','.bg_master','backgroundColor','white','replace','style','0\x200\x2010px\x200','#777','N/A','border-box','サーバー負荷低減のため待機時間（毎曲1.2秒）を設けています。しばらくお待ちください。<br>楽曲データを取得中...\x20(','error','getDate','startBtn','PLAYER','revokeObjectURL','customNameInput','floor','trim','レーティング対象曲が見つかりません。\x0aCHUNITHM-NETにログインしているか確認してください。','スコア:\x20','</span>','href','---','\x0a\x20\x20\x20\x20\x20\x20\x20\x20<style>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.style-select-container\x20{\x20display:\x20flex;\x20justify-content:\x20space-around;\x20margin-bottom:\x2020px;\x20border-top:\x201px\x20solid\x20#eee;\x20padding-top:\x2015px;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.style-option\x20{\x20text-align:\x20center;\x20cursor:\x20pointer;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.style-option\x20img\x20{\x20width:\x20180px;\x20height:\x20auto;\x20border:\x203px\x20solid\x20#ccc;\x20border-radius:\x205px;\x20margin-top:\x205px;\x20object-fit:\x20contain;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.style-option\x20input[type=\x22radio\x22]\x20{\x20display:\x20none;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.style-option\x20input[type=\x22radio\x22]:checked\x20+\x20label\x20+\x20img\x20{\x20border-color:\x20#007bff;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20.style-option\x20label\x20{\x20font-size:\x2016px;\x20font-weight:\x20bold;\x20}\x0a\x20\x20\x20\x20\x20\x20\x20\x20</style>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<h3\x20style=\x22margin-top:0;\x20margin-bottom:20px;\x20font-size:18px;\x20text-align:center;\x22>画像生成オプション</h3>\x0a\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22style-select-container\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22style-option\x22\x20onclick=\x22document.getElementById(\x27styleA\x27).checked\x20=\x20true;\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<input\x20type=\x22radio\x22\x20id=\x22styleA\x22\x20name=\x22imageStyle\x22\x20value=\x22A\x22\x20checked>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<label\x20for=\x22styleA\x22>スタイルA</label>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22','number','0\x200\x204px\x200','471414SiPAvJ','</span><span\x20style=\x22font-size:13px;\x20color:#ccc;\x20font-weight:bold;\x22>&#9654;</span><span\x20style=\x22font-size:13px;\x20color:#ffb84b;\x20font-weight:bold;\x20position:relative;\x20z-index:1;\x22>RATE:\x20','borderColor','all','ポップアップがブロックされました。生成結果のモーダルから画像をダウンロードしてください。','toBlob','391434JBjcIX','get','<div><h2\x20style=\x22color:#eee;\x20margin:0\x200\x2012px\x200;\x20font-size:32px;\x20font-weight:bold;\x22>Player:\x20','toFixed','#e0e0e0','nextElementSibling','space-between','\x27Helvetica\x20Neue\x27,\x20Arial,\x20sans-serif','3px\x20solid\x20transparent','removeChild','https://new.chunithm-net.com/chuni-mobile/html/mobile/home/','\x22\x20style=\x22width:100%;\x20max-width:100%;\x20height:auto;\x22></body></html>','8px\x204px\x204px\x204px','14px','プレイヤー名の取得に失敗:','google-font-','dispatchEvent','12px','downloadBtn','#1c1c1e','https://html2canvas.hertzen.com/dist/html2canvas.min.js','createObjectURL','slice','showPlayCountCheckbox','hidden','.music_title','#e35454','#000000','</p>','rel','<html><head><title>CHUNITHM\x20Rating\x20Chart</title><style>body{margin:0;\x20background-color:black;}</style></head><body><img\x20src=\x22','30px','#2a2a2e','ULTIMA','1.5','#333','ADVANCED','-9999px','1vdSkEk','application/x-www-form-urlencoded'];_0x519c=function(){return _0x4f2be8;};return _0x519c();}
+(async () => {
+  // === ユーティリティ関数 ===
+
+  const loadGoogleFont = (fontFamily, weight) => {
+    const linkId = `google-font-${fontFamily}`;
+    if (document.getElementById(linkId)) return;
+    const link = document.createElement("link");
+    link.id = linkId;
+    link.href = `https://fonts.googleapis.com/css2?family=${fontFamily}:wght@${weight}&display=swap`;
+    link.rel = "stylesheet";
+    document.head.appendChild(link);
+  };
+
+  const calculateRatingValue = (score, constant) => {
+    if (
+      typeof score !== "number" ||
+      typeof constant !== "number" ||
+      isNaN(score) ||
+      isNaN(constant)
+    ) {
+      return "---";
+    }
+    let rating = 0;
+    if (score >= 1009000) {
+      rating = constant + 2.15;
+    } else if (score >= 1007500) {
+      rating = constant + 2.0 + (score - 1007500) / 10000;
+    } else if (score >= 1005000) {
+      rating = constant + 1.5 + (score - 1005000) / 5000;
+    } else if (score >= 1000000) {
+      rating = constant + 1.0 + (score - 1000000) / 10000;
+    } else if (score >= 975000) {
+      rating = constant + (score - 975000) / 25000;
+    } else if (score >= 900000) {
+      rating = constant - 5.0 + (score - 900000) / 15000;
+    } else {
+      rating = 0;
+    }
+    return Math.max(0, rating).toFixed(4);
+  };
+
+  const showStartConfirmationModal = () => {
+    return new Promise((resolve, reject) => {
+      const modalOverlay = document.createElement("div");
+      Object.assign(modalOverlay.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.75)",
+        zIndex: "10001",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "'Helvetica Neue', Arial, sans-serif",
+      });
+
+      const modalContent = document.createElement("div");
+      Object.assign(modalContent.style, {
+        backgroundColor: "white",
+        padding: "30px",
+        borderRadius: "10px",
+        width: "350px",
+        textAlign: "center",
+        boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+      });
+
+      modalContent.innerHTML = `
+        <h3 style="margin-top:0; margin-bottom:20px; font-size:20px; color:#333;">楽曲データ取得の確認</h3>
+        <p style="font-size:15px; margin-bottom:25px; line-height:1.6; text-align:left;">
+          CHUNITHM-NETからベスト枠の楽曲データ(30曲)を取得します。<br>
+          <strong style="color:red;">⚠️ サーバー負荷軽減のため、毎曲1.2秒の待機時間があります。</strong><br>
+          <strong style="color:red;">合計で約1分間の処理を要します。</strong>
+        </p>
+        <div style="display: flex; justify-content: space-between; gap: 10px;">
+          <button id="cancelBtn" style="width:50%; padding:10px; border:1px solid #ccc; border-radius:5px; background-color:#f8f9fa; color:#333; font-size:16px; cursor:pointer;">キャンセル</button>
+          <button id="startBtn" style="width:50%; padding:10px; border:none; border-radius:5px; background-color:#007bff; color:white; font-size:16px; font-weight:bold; cursor:pointer;">開始する</button>
+        </div>
+      `;
+
+      modalOverlay.appendChild(modalContent);
+      document.body.appendChild(modalOverlay);
+
+      document.getElementById("startBtn").addEventListener("click", () => {
+        modalOverlay.remove();
+        resolve();
+      });
+
+      document.getElementById("cancelBtn").addEventListener("click", () => {
+        modalOverlay.remove();
+        reject(new Error("User cancelled"));
+      });
+
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) {
+          modalOverlay.remove();
+          reject(new Error("User cancelled"));
+        }
+      });
+    });
+  };
+
+  const showSettingsModal = (currentName) => {
+    return new Promise((resolve, reject) => {
+      const styleA_img_src =
+        "https://runaaa0712.weblike.jp/chunithm/best-generator/styleA_img";
+      const styleB_img_src =
+        "https://runaaa0712.weblike.jp/chunithm/best-generator/styleB_img";
+      const editorModalOverlay = document.createElement("div");
+      Object.assign(editorModalOverlay.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.75)",
+        zIndex: "10001",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontFamily: "'Helvetica Neue', Arial, sans-serif",
+      });
+
+      const modalContent = document.createElement("div");
+      Object.assign(modalContent.style, {
+        backgroundColor: "white",
+        padding: "25px",
+        borderRadius: "10px",
+        width: "450px",
+        textAlign: "left",
+        boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+      });
+
+      modalContent.innerHTML = `
+        <style>
+          .style-select-container { display: flex; justify-content: space-around; margin-bottom: 20px; border-top: 1px solid #eee; padding-top: 15px; }
+          .style-option { text-align: center; cursor: pointer; }
+          .style-option img { width: 180px; height: auto; border: 3px solid #ccc; border-radius: 5px; margin-top: 5px; object-fit: contain; }
+          .style-option input[type="radio"] { display: none; }
+          .style-option input[type="radio"]:checked + label + img { border-color: #007bff; }
+          .style-option label { font-size: 16px; font-weight: bold; }
+        </style>
+        <h3 style="margin-top:0; margin-bottom:20px; font-size:18px; text-align:center;">画像生成オプション</h3>
+        <div class="style-select-container">
+          <div class="style-option" onclick="document.getElementById('styleA').checked = true;">
+            <input type="radio" id="styleA" name="imageStyle" value="A" checked>
+            <label for="styleA">スタイルA</label>
+            <img src="${styleA_img_src}" alt="スタイルAのサンプル画像">
+          </div>
+          <div class="style-option" onclick="document.getElementById('styleB').checked = true;">
+            <input type="radio" id="styleB" name="imageStyle" value="B">
+            <label for="styleB">スタイルB</label>
+            <img src="${styleB_img_src}" alt="スタイルBのサンプル画像">
+          </div>
+        </div>
+        <div style="margin-bottom:15px; border-top: 1px solid #eee; padding-top: 15px;">
+          <div style="display:flex; align-items:center; cursor:pointer;" id="hideNameLabel">
+            <input type="checkbox" id="hideNameCheckbox" style="margin-right:8px; width:18px; height:18px;">
+            <label for="hideNameCheckbox" style="font-size:16px; cursor:pointer;">プレイヤー名を隠す</label>
+          </div>
+          <input type="text" id="customNameInput" placeholder="表示名を入力" style="width:calc(100% - 22px); padding:10px; margin-top:10px; border:1px solid #ccc; border-radius:5px; font-size:16px; background-color:#f1f1f1;" disabled>
+        </div>
+        <div style="border-top: 1px solid #eee; padding-top: 15px; margin-bottom:25px;">
+          <div style="display:flex; align-items:center; cursor:pointer;" id="showPlayCountLabel">
+            <input type="checkbox" id="showPlayCountCheckbox" style="margin-right:8px; width:18px; height:18px;" checked>
+            <label for="showPlayCountCheckbox" style="font-size:16px; cursor:pointer;">プレイ回数を表示</label>
+          </div>
+        </div>
+        <div>
+          <button id="generateBtn" style="width:100%; padding:12px; border:none; border-radius:5px; background-color:#007bff; color:white; font-size:16px; font-weight:bold; cursor:pointer;">画像生成</button>
+        </div>
+      `;
+
+      editorModalOverlay.appendChild(modalContent);
+      document.body.appendChild(editorModalOverlay);
+
+      const createToggleHandler = (labelId, checkboxId) => {
+        const label = document.getElementById(labelId);
+        if (label) {
+          label.addEventListener("click", (e) => {
+            if (e.target.id !== checkboxId) {
+              const checkbox = document.getElementById(checkboxId);
+              checkbox.checked = !checkbox.checked;
+              checkbox.dispatchEvent(new Event("change"));
+            }
+          });
+        }
+      };
+
+      createToggleHandler("hideNameLabel", "hideNameCheckbox");
+      createToggleHandler("showPlayCountLabel", "showPlayCountCheckbox");
+
+      document
+        .getElementById("hideNameCheckbox")
+        .addEventListener("change", (e) => {
+          const customNameInput = document.getElementById("customNameInput");
+          customNameInput.disabled = !e.target.checked;
+          customNameInput.style.backgroundColor = e.target.checked
+            ? "white"
+            : "#f1f1f1";
+          if (e.target.checked) {
+            customNameInput.value = "PLAYER";
+            customNameInput.focus();
+          }
+        });
+
+      document.getElementById("generateBtn").addEventListener("click", () => {
+        let finalName = currentName;
+        if (document.getElementById("hideNameCheckbox").checked) {
+          finalName =
+            document.getElementById("customNameInput").value || "PLAYER";
+        }
+
+        const settings = {
+          playerName: finalName,
+          showPlayCount: document.getElementById("showPlayCountCheckbox")
+            .checked,
+          style: document.querySelector('input[name="imageStyle"]:checked')
+            .value,
+        };
+
+        editorModalOverlay.remove();
+        resolve(settings);
+      });
+
+      editorModalOverlay.addEventListener("click", (e) => {
+        if (e.target === editorModalOverlay) {
+          editorModalOverlay.remove();
+          reject(new Error("User cancelled"));
+        }
+      });
+    });
+  };
+
+  const showResultModal = (imageBlob, dataUrl, averageRating, playerName) => {
+    const resultModalOverlay = document.createElement("div");
+    Object.assign(resultModalOverlay.style, {
+      position: "fixed",
+      top: "0",
+      left: "0",
+      width: "100%",
+      height: "100%",
+      backgroundColor: "rgba(0, 0, 0, 0.75)",
+      zIndex: "10002",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      fontFamily: "'Helvetica Neue', Arial, sans-serif",
+      padding: "20px",
+      boxSizing: "border-box",
+      overflowY: "auto",
+    });
+
+    const modalContent = document.createElement("div");
+    Object.assign(modalContent.style, {
+      backgroundColor: "white",
+      padding: "20px",
+      borderRadius: "10px",
+      width: "auto",
+      maxWidth: "90%",
+      textAlign: "center",
+      boxShadow: "0 5px 15px rgba(0,0,0,0.5)",
+    });
+
+    const filename = `chunithm_best_rating_${playerName}_${new Date()
+      .toISOString()
+      .slice(0, 10)}.jpeg`;
+
+    modalContent.innerHTML = `
+      <h3 style="margin-top:0; margin-bottom:15px; font-size:20px; color:#333;">画像生成完了🎉</h3>
+      <p style="font-size:16px; margin-bottom:10px; line-height:1.5;">
+        画像は新しいタブで開かれました。
+      </p>
+      <div style="max-height: 50vh; overflow-y: auto; border: 1px solid #ccc; margin-bottom: 15px;">
+        <img src="${dataUrl}" style="width: 100%; height: auto; display: block; max-width: 100%;">
+      </div>
+      <p style="font-size:14px; margin-bottom:15px; color:#666;">
+        👆 上記画像を長押し、または以下のボタンで保存できます。
+      </p>
+      <div style="display: flex; justify-content: center;">
+        <button id="downloadBtn"
+           style="padding:10px 20px; border:none; border-radius:5px; background-color:#28a745; color:white; font-size:16px; font-weight:bold; cursor:pointer;">
+          画像をダウンロード (${(imageBlob.size / 1024 / 1024).toFixed(2)}MB)
+        </button>
+      </div>
+      <button id="closeBtn" style="width:100%; padding:10px; border:1px solid #ccc; border-radius:5px; background-color:white; color:#333; font-size:16px; cursor:pointer; margin-top:15px;">閉じる</button>
+    `;
+
+    resultModalOverlay.appendChild(modalContent);
+    document.body.appendChild(resultModalOverlay);
+
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+      const url = URL.createObjectURL(imageBlob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    });
+
+    document.getElementById("closeBtn").addEventListener("click", () => {
+      resultModalOverlay.remove();
+    });
+
+    resultModalOverlay.addEventListener("click", (e) => {
+      if (e.target === resultModalOverlay) {
+        resultModalOverlay.remove();
+      }
+    });
+  };
+
+  const generateImageWithCompression = async (
+    container,
+    playerName,
+    initialQuality = 0.85
+  ) => {
+    const MAX_SIZE_BYTES = 2 * 1024 * 1024; // 2MB
+    let currentQuality = initialQuality;
+    let canvas = null;
+    let blob = null;
+
+    canvas = await html2canvas(container, {
+      backgroundColor: "#1c1c1e",
+      useCORS: true,
+      allowTaint: true,
+    });
+
+    let attempt = 0;
+    while (attempt < 10) {
+      blob = await new Promise((resolve) =>
+        canvas.toBlob(resolve, "image/jpeg", currentQuality)
+      );
+
+      if (!blob || blob.size <= MAX_SIZE_BYTES) {
+        break;
+      }
+
+      const sizeRatio = MAX_SIZE_BYTES / blob.size;
+      currentQuality *= sizeRatio * 0.9;
+      currentQuality = Math.max(0.1, currentQuality);
+      attempt++;
+    }
+
+    if (!blob) throw new Error("画像ファイル生成に失敗しました。");
+
+    const dataUrl = await new Promise((resolve) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.readAsDataURL(blob);
+    });
+
+    return { blob, dataUrl };
+  };
+
+  // === メイン処理 ===
+
+  try {
+    await showStartConfirmationModal();
+  } catch (e) {
+    if (e.message === "User cancelled") return;
+    throw e;
+  }
+
+  loadGoogleFont("Orbitron", 900);
+
+  const API_ENDPOINT =
+    "https://runaaa0712.weblike.jp/api/chunithm/v1/const/query.php";
+  const difficultyMap = {
+    0: "BASIC",
+    1: "ADVANCED",
+    2: "EXPERT",
+    3: "MASTER",
+    4: "ULTIMA",
+  };
+
+  const progressModal = document.createElement("div");
+  Object.assign(progressModal.style, {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    width: "100%",
+    height: "100%",
+    backgroundColor: "rgba(0, 0, 0, 0.75)",
+    zIndex: "10000",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    color: "#333",
+    fontFamily: "'Helvetica Neue', Arial, sans-serif",
+  });
+  const modalContent = document.createElement("div");
+  Object.assign(modalContent.style, {
+    backgroundColor: "white",
+    padding: "30px 40px",
+    borderRadius: "10px",
+    textAlign: "center",
+    boxShadow: "0 5px 15px rgba(0,0,0,0.3)",
+  });
+  const progressText = document.createElement("p");
+  Object.assign(progressText.style, {
+    fontSize: "18px",
+    fontWeight: "bold",
+    margin: "0 0 10px 0",
+    lineHeight: "1.5",
+  });
+  const songTitleText = document.createElement("p");
+  Object.assign(songTitleText.style, {
+    fontSize: "16px",
+    margin: "0",
+    minHeight: "20px",
+  });
+  modalContent.appendChild(progressText);
+  modalContent.appendChild(songTitleText);
+  progressModal.appendChild(modalContent);
+  document.body.appendChild(progressModal);
+
+  try {
+    progressText.innerText = "必要なページ情報を取得中...";
+    songTitleText.innerText = "プレイヤー情報 / ベスト枠一覧";
+
+    const [homeHtml, ratingHtml] = await Promise.all([
+      fetch("https://new.chunithm-net.com/chuni-mobile/html/mobile/home/").then(
+        (res) => res.text()
+      ),
+      fetch(
+        "https://new.chunithm-net.com/chuni-mobile/html/mobile/home/playerData/ratingDetailBest/"
+      ).then((res) => res.text()),
+    ]);
+    const parser = new DOMParser();
+    let playerName = "プレイヤー情報なし";
+    try {
+      const homeDoc = parser.parseFromString(homeHtml, "text/html");
+      const nameElement = homeDoc.querySelector(".player_name_in");
+      if (nameElement) {
+        playerName = nameElement.innerText.trim();
+      }
+    } catch (e) {
+      console.error("プレイヤー名の取得に失敗:", e);
+    }
+
+    const ratingDoc = parser.parseFromString(ratingHtml, "text/html");
+    const musicForms = Array.from(ratingDoc.querySelectorAll(".box05 > form"));
+    if (musicForms.length === 0) {
+      throw new Error(
+        "レーティング対象曲が見つかりません。\nCHUNITHM-NETにログインしているか確認してください。"
+      );
+    }
+
+    const collectedData = [];
+    for (let i = 0; i < musicForms.length; i++) {
+      const form = musicForms[i];
+      const musicTitle = form.querySelector(".music_title").innerText.trim();
+
+      progressText.innerHTML = `サーバー負荷低減のため待機時間（毎曲1.2秒）を設けています。しばらくお待ちください。<br>楽曲データを取得中... (${
+        i + 1
+      }/${musicForms.length})`;
+      songTitleText.innerText = musicTitle;
+
+      const scoreStr = form
+        .querySelector(".play_musicdata_highscore .text_b")
+        .innerText.trim();
+      const scoreInt = parseInt(scoreStr.replace(/,/g, ""), 10);
+      const diffValue = new FormData(form).get("diff");
+      const difficultyString = difficultyMap[diffValue] || "UNKNOWN";
+      let jacketUrl = "取得失敗",
+        playCount = "取得失敗",
+        musicConstant = "N/A",
+        ratingValue = "---";
+
+      try {
+        const postBody = new URLSearchParams(new FormData(form)).toString();
+        const response = await fetch(
+          "https://new.chunithm-net.com/chuni-mobile/html/mobile/record/musicGenre/sendMusicDetail/",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: postBody,
+          }
+        );
+        const detailHtml = await response.text();
+        const detailDoc = new DOMParser().parseFromString(
+          detailHtml,
+          "text/html"
+        );
+        jacketUrl =
+          detailDoc.querySelector(".play_jacket_img img")?.src || "取得失敗";
+        let diffClass = "";
+        switch (diffValue) {
+          case "4":
+            diffClass = ".bg_ultima";
+            break;
+          case "3":
+            diffClass = ".bg_master";
+            break;
+          case "2":
+            diffClass = ".bg_expert";
+            break;
+        }
+        if (diffClass) {
+          const targetBlock = detailDoc.querySelector(diffClass);
+          if (targetBlock) {
+            for (const titleElement of targetBlock.querySelectorAll(
+              ".musicdata_score_title"
+            )) {
+              if (titleElement.innerText.includes("プレイ回数")) {
+                playCount = titleElement.nextElementSibling.innerText.trim();
+                break;
+              }
+            }
+          }
+        }
+      } catch (e) {
+        console.error(`「${musicTitle}」の詳細取得エラー:`, e);
+      }
+
+      try {
+        const apiResponse = await fetch(
+          `${API_ENDPOINT}?song=${encodeURIComponent(
+            musicTitle
+          )}&difficulty=${difficultyString}`
+        );
+        if (apiResponse.ok) {
+          const data = await apiResponse.json();
+          if (data && data["定数値"]) {
+            musicConstant = data["定数値"];
+            ratingValue = calculateRatingValue(
+              scoreInt,
+              parseFloat(musicConstant)
+            );
+          }
+        }
+      } catch (e) {
+        console.error(`「${musicTitle}」のAPI通信エラー:`, e);
+      }
+
+      collectedData.push({
+        title: musicTitle,
+        score: scoreStr,
+        jacketUrl,
+        playCount,
+        constant: musicConstant,
+        ratingValue,
+        diffValue,
+      });
+      await new Promise((resolve) => setTimeout(resolve, 1200));
+    }
+
+    progressModal.style.display = "none";
+    const userSettings = await showSettingsModal(playerName);
+    playerName = userSettings.playerName;
+
+    progressModal.style.display = "flex";
+    progressText.innerText = "画像を生成中...";
+    songTitleText.innerText = "しばらくお待ちください...";
+
+    let totalRating = 0;
+    let validRatingCount = 0;
+    collectedData.forEach((song) => {
+      const r = parseFloat(song.ratingValue);
+      if (!isNaN(r)) {
+        const valueForCalc = Math.floor(r * 100) / 100;
+        totalRating += valueForCalc;
+        validRatingCount++;
+      }
+    });
+    const averageRating =
+      validRatingCount > 0
+        ? (totalRating / validRatingCount).toFixed(4)
+        : "算出不可";
+
+    const container = document.createElement("div");
+    container.id = "chunithm-chart-container";
+    Object.assign(container.style, {
+      position: "absolute",
+      left: "-9999px",
+      top: "0",
+      width: "1240px",
+      backgroundColor: "#1c1c1e",
+      zIndex: "-1",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      fontFamily: "'Helvetica Neue', Arial, sans-serif",
+      boxSizing: "border-box",
+    });
+
+    const topHeader = document.createElement("div");
+    Object.assign(topHeader.style, {
+      width: "100%",
+      padding: "15px 25px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      background: "#2a2a2e",
+      color: "white",
+      boxSizing: "border-box",
+    });
+    topHeader.innerHTML = `<h1 style="margin:0; font-size:28px; font-weight:bold;">るなぁぁ版べ枠ジェネレーター</h1><p style="margin:0; font-size:16px; color:#aaa;">Creator：@RuuNaa00</p>`;
+    container.appendChild(topHeader);
+
+    const now = new Date();
+    const timestamp = `${now.getFullYear()}/${String(
+      now.getMonth() + 1
+    ).padStart(2, "0")}/${String(now.getDate()).padStart(2, "0")} ${String(
+      now.getHours()
+    ).padStart(2, "0")}:${String(now.getMinutes()).padStart(2, "0")}`;
+    const playerInfoHeader = document.createElement("div");
+    Object.assign(playerInfoHeader.style, {
+      width: "100%",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      padding: "20px",
+      margin: "20px 0",
+      boxSizing: "border-box",
+    });
+    playerInfoHeader.innerHTML = `<div><h2 style="color:#eee; margin:0 0 12px 0; font-size:32px; font-weight:bold;">Player: ${playerName}</h2><p style="color:#ffb84b; margin:0; font-size:24px; font-weight:bold;">BEST枠平均RATE: ${averageRating}</p></div><p style="color:#aaa; margin:0; font-size:16px;">Generated: ${timestamp}</p>`;
+    container.appendChild(playerInfoHeader);
+
+    const gridDiv = document.createElement("div");
+    Object.assign(gridDiv.style, {
+      display: "flex",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      width: "100%",
+      padding: "0 10px",
+      boxSizing: "border-box",
+    });
+
+    collectedData.forEach((song, index) => {
+      const card = document.createElement("div");
+      Object.assign(card.style, {
+        width: "calc(20% - 20px)",
+        margin: "10px",
+        backgroundColor: "#222",
+        color: "#eee",
+        borderRadius: "8px",
+        boxSizing: "border-box",
+        textAlign: "center",
+        position: "relative",
+        border: "3px solid transparent",
+      });
+      const difficultyColors = { 2: "#e35454", 3: "#800080", 4: "#000000" };
+      if (difficultyColors[song.diffValue])
+        card.style.borderColor = difficultyColors[song.diffValue];
+
+      const img = document.createElement("img");
+      img.src = song.jacketUrl;
+      Object.assign(img.style, {
+        width: "100%",
+        height: "auto",
+        borderRadius: "4px 4px 0 0",
+        borderBottom: "1px solid #444",
+        display: "block",
+      });
+
+      const detailsContainer = document.createElement("div");
+      Object.assign(detailsContainer.style, {
+        position: "relative",
+        padding: "8px 4px 4px 4px",
+        overflow: "hidden",
+      });
+
+      detailsContainer.innerHTML = `<div style="position:absolute; right:-10px; bottom:-25px; font-size:80px; font-weight:900; font-family:Orbitron, sans-serif; color:rgba(255,255,255,0.1); z-index:0; line-height:1; user-select:none;">#${
+        index + 1
+      }</div>`;
+
+      const textStyle = { position: "relative", zIndex: "1" };
+      const titleP = document.createElement("p");
+      titleP.innerText = song.title;
+
+      const scoreValue = parseInt(song.score.replace(/,/g, ""), 10);
+      let rank = "",
+        rankColor = "#eee";
+      if (scoreValue >= 1009000) {
+        rank = "SSS+";
+        rankColor = "#ffb84b";
+      } else if (scoreValue >= 1007500) {
+        rank = "SSS";
+        rankColor = "#ffd700";
+      } else if (scoreValue >= 1005000) {
+        rank = "SS+";
+        rankColor = "#f0f0f0";
+      } else if (scoreValue >= 1000000) {
+        rank = "SS";
+        rankColor = "#e0e0e0";
+      }
+
+      const scoreP = document.createElement("p");
+      scoreP.innerHTML = `スコア: ${song.score} <span style="color:${rankColor}; font-weight:bold;">${rank}</span>`;
+
+      if (userSettings.style === "A") {
+        Object.assign(titleP.style, textStyle, {
+          fontWeight: "bold",
+          fontSize: "14px",
+          marginBottom: "4px",
+          height: "3.2em",
+          lineHeight: "1.6em",
+          overflow: "hidden",
+        });
+        Object.assign(scoreP.style, textStyle, {
+          fontSize: "13px",
+          color: "#ccc",
+          margin: "0 0 4px 0",
+        });
+        const constantP = document.createElement("p");
+        constantP.innerText = `定数: ${song.constant}`;
+        Object.assign(constantP.style, textStyle, {
+          fontSize: "13px",
+          color: "#aadeff",
+          margin: "0 0 4px 0",
+          fontWeight: "bold",
+        });
+        const ratingValueP = document.createElement("p");
+        ratingValueP.innerText = `RATE: ${song.ratingValue}`;
+        Object.assign(ratingValueP.style, textStyle, {
+          fontSize: "14px",
+          color: "#ffb84b",
+          margin: "0 0 4px 0",
+          fontWeight: "bold",
+          border: "1px solid #555",
+          borderRadius: "4px",
+          padding: "2px 0",
+          backgroundColor: "#333",
+        });
+        detailsContainer.appendChild(titleP);
+        detailsContainer.appendChild(scoreP);
+        detailsContainer.appendChild(constantP);
+        detailsContainer.appendChild(ratingValueP);
+      } else {
+        Object.assign(titleP.style, textStyle, {
+          fontWeight: "bold",
+          fontSize: "16px",
+          marginBottom: "4px",
+          height: "1.6em",
+          lineHeight: "1.6em",
+          overflow: "hidden",
+          whiteSpace: "nowrap",
+          textOverflow: "ellipsis",
+        });
+        Object.assign(scoreP.style, textStyle, {
+          fontSize: "14px",
+          color: "#ccc",
+          margin: "0 0 4px 0",
+        });
+        const statsContainer = document.createElement("div");
+        statsContainer.innerHTML = `<span style="font-size:13px; color:#aadeff; font-weight:bold; position:relative; z-index:1;">定数: ${song.constant}</span><span style="font-size:13px; color:#ccc; font-weight:bold;">&#9654;</span><span style="font-size:13px; color:#ffb84b; font-weight:bold; position:relative; z-index:1;">RATE: ${song.ratingValue}</span>`;
+        Object.assign(statsContainer.style, {
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          gap: "8px",
+          margin: "0 0 4px 0",
+          border: "1px solid #555",
+          borderRadius: "4px",
+          padding: "2px 8px",
+          backgroundColor: "#333",
+        });
+        detailsContainer.appendChild(titleP);
+        detailsContainer.appendChild(scoreP);
+        detailsContainer.appendChild(statsContainer);
+      }
+
+      if (userSettings.showPlayCount) {
+        const playCountP = document.createElement("p");
+        playCountP.innerText = `プレイ回数: ${song.playCount}`;
+        Object.assign(playCountP.style, textStyle, {
+          fontSize: "12px",
+          color: "#888",
+          margin: "0",
+        });
+        detailsContainer.appendChild(playCountP);
+      }
+
+      card.appendChild(img);
+      card.appendChild(detailsContainer);
+      gridDiv.appendChild(card);
+    });
+    container.appendChild(gridDiv);
+
+    const footer = document.createElement("div");
+    Object.assign(footer.style, {
+      width: "100%",
+      padding: "20px",
+      marginTop: "20px",
+      color: "#777",
+      fontSize: "12px",
+      textAlign: "center",
+      boxSizing: "border-box",
+      borderTop: "1px solid #444",
+    });
+    footer.innerHTML = `この画像はCHUNITHM-NETの表示内容を元に、ブックマークレットによって作成されました。<br>この画像は非公式ツールによって生成されたものであり、SEGA公式とは一切関係ありません。<br>楽曲ジャケット画像の著作権は、全て著作権所持者に帰属します。<br><br>本ページの情報はchunirecおよび<a href="https://chuni.kichi2004.jp/charts" target="_blank" rel="noopener noreferrer" style="color: #aadeff; text-decoration: none;">譜面定数メインフレーム</a>様のデータに基づきます。楽曲の定数は正確ではない場合があります。`;
+    container.appendChild(footer);
+    document.body.appendChild(container);
+
+    const script = document.createElement("script");
+    script.src = "https://html2canvas.hertzen.com/dist/html2canvas.min.js";
+    document.body.appendChild(script);
+
+    script.onload = async () => {
+      try {
+        await new Promise((resolve) => setTimeout(resolve, 500));
+        const { blob, dataUrl } = await generateImageWithCompression(
+          container,
+          playerName
+        );
+
+        progressModal.remove();
+
+        const newTab = window.open();
+        if (newTab) {
+          newTab.document.write(
+            `<html><head><title>CHUNITHM Rating Chart</title><style>body{margin:0; background-color:black;}</style></head><body><img src="${dataUrl}" style="width:100%; max-width:100%; height:auto;"></body></html>`
+          );
+          newTab.document.close();
+        }
+
+        showResultModal(blob, dataUrl, averageRating, playerName);
+
+        if (!newTab) {
+          alert(
+            "ポップアップがブロックされました。生成結果のモーダルから画像をダウンロードしてください。"
+          );
+        }
+      } catch (e) {
+        throw e;
+      } finally {
+        container.remove();
+      }
+    };
+  } catch (e) {
+    if (e.message !== "User cancelled") {
+      alert("エラーが発生しました: " + e.message);
+    }
+    if (progressModal) progressModal.remove();
+  }
+})();
