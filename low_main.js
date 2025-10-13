@@ -1,6 +1,5 @@
-(async () => {
-  // === ユーティリティ関数 ===
-
+((((( 動作不能対策
+  (async () => {
   const loadGoogleFont = (fontFamily, weight) => {
     const linkId = `google-font-${fontFamily}`;
     if (document.getElementById(linkId)) return;
