@@ -103,9 +103,9 @@
   const showSettingsModal = (currentName) => {
     return new Promise((resolve, reject) => {
       const styleA_img_src =
-        "https://runaaa0712.weblike.jp/chunithm/best-generator/styleA_img";
+        "https://xxxxxxxxxxxxxxxxxxxxxxx/styleA_img";
       const styleB_img_src =
-        "https://runaaa0712.weblike.jp/chunithm/best-generator/styleB_img";
+        "https://xxxxxxxxxxxxxxxxxxxxxxx/styleB_img";
       const editorModalOverlay = document.createElement("div");
       Object.assign(editorModalOverlay.style, {
         position: "fixed",
@@ -366,7 +366,7 @@
   loadGoogleFont("Orbitron", 900);
 
   const API_ENDPOINT =
-    "https://runaaa0712.weblike.jp/api/chunithm/v1/const/query.php";
+    "https://xxxxxxxxxxxxxxxxxxxxxxx";
   const difficultyMap = {
     0: "BASIC",
     1: "ADVANCED",
